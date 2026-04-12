@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Working notes, personal documents, and source material not part of the site
+pictures/
+*.pdf
+/How_we_work.md
+/Leif_Naess_CV.md

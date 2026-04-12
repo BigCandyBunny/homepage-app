@@ -10,17 +10,10 @@ describe('About component', () => {
     expect(heading!.textContent).toMatch(/just Results Consulting/)
   })
 
-  it('displays founder name with academic titles in smaller text', () => {
+  it('does not duplicate the founder block — that now lives in the hero', () => {
     const { container } = render(About)
-    const founder = container.querySelector('.founder')
-    expect(founder).toBeTruthy()
-    expect(founder!.textContent).toMatch(/Leif Næss/)
-    // Titles (MBA, PhD, MSc) should be present but visually smaller
-    const titles = container.querySelector('.titles')
-    expect(titles).toBeTruthy()
-    expect(titles!.textContent).toMatch(/MBA/)
-    expect(titles!.textContent).toMatch(/PhD/)
-    expect(titles!.textContent).toMatch(/MSc/)
+    expect(container.querySelector('.founder')).toBeNull()
+    expect(container.textContent).not.toMatch(/Leif Næss/)
   })
 
   it('renders a curated professional background summary', () => {
@@ -46,11 +39,11 @@ describe('About component', () => {
     expect(contactInfo!.textContent).toMatch(/justresults\.no/)
   })
 
-  it('renders a TechStack and CV link that opens the PNG in a new tab', () => {
-    render(About)
-    const link = screen.getByRole('link', { name: /techstack and cv/i }) as HTMLAnchorElement
-    expect(link).toBeTruthy()
-    expect(link.href).toContain('/briefs/TechStack_CV.png')
-    expect(link.target).toBe('_blank')
+  it('renders a TechStack and CV button that triggers the in-page BriefDialog', () => {
+    const { container } = render(About)
+    const btn = screen.getByRole('button', { name: /techstack and cv/i }) as HTMLButtonElement
+    expect(btn).toBeTruthy()
+    expect(btn.dataset.src).toContain('/briefs/TechStack_CV.png')
+    expect(container.querySelectorAll('a[target="_blank"]').length).toBe(0)
   })
 })

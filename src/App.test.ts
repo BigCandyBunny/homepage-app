@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/svelte'
+import { render, screen, within } from '@testing-library/svelte'
 import App from './App.svelte'
 
 describe('Homepage structure', () => {
@@ -10,23 +10,24 @@ describe('Homepage structure', () => {
     expect(hero!.textContent).toMatch(/just Results Consulting/)
   })
 
-  it('has a single-page layout with all five sections', () => {
+  it('has a single-page layout with four sections (tech stack merged into projects)', () => {
     const { container } = render(App)
     expect(container.querySelector('#hero')).toBeTruthy()
     expect(container.querySelector('#projects')).toBeTruthy()
-    expect(container.querySelector('#tech-stack')).toBeTruthy()
     expect(container.querySelector('#contact')).toBeTruthy()
     expect(container.querySelector('#about')).toBeTruthy()
+    expect(container.querySelector('#tech-stack')).toBeNull()
   })
 
-  it('has a navigation bar linking to all sections', () => {
+  it('has a navigation bar linking to the remaining sections', () => {
     render(App)
     const nav = screen.getByRole('navigation')
     expect(nav).toBeTruthy()
-    expect(screen.getByRole('link', { name: /projects/i })).toBeTruthy()
-    expect(screen.getByRole('link', { name: /^tech$/i })).toBeTruthy()
-    expect(screen.getByRole('link', { name: /contact/i })).toBeTruthy()
-    expect(screen.getByRole('link', { name: /about/i })).toBeTruthy()
+    const navScope = within(nav)
+    expect(navScope.getByRole('link', { name: /projects/i })).toBeTruthy()
+    expect(navScope.getByRole('link', { name: /contact/i })).toBeTruthy()
+    expect(navScope.getByRole('link', { name: /about/i })).toBeTruthy()
+    expect(navScope.queryByRole('link', { name: /^tech$/i })).toBeNull()
   })
 })
 

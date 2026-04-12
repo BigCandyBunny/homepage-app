@@ -14,8 +14,17 @@
   }
 </script>
 
-<section id="contact">
-  <h2>Contact Us</h2>
+<section id="contact" aria-labelledby="contact-heading">
+  <span class="section-number" aria-hidden="true">III</span>
+  <h2 id="contact-heading">Contact Us</h2>
+
+  <p class="lead-in">
+    Every engagement begins with a diagnosis, not a deck. We sit with the
+    board and the shop floor in equal measure, map where intent meets
+    constraint, and then propose the smallest change that moves the result.
+    Most mandates run eight to twenty weeks and leave the organisation able
+    to make the next decision without us.
+  </p>
 
   {#if submitted}
     <div class="success-message">
@@ -23,8 +32,8 @@
     </div>
   {:else}
     <form onsubmit={handleSubmit}>
-      <div class="form-group">
-        <label for="contact-name">Name</label>
+      <div class="form-group underlined">
+        <label class="field-label" for="contact-name">Name</label>
         <input
           id="contact-name"
           type="text"
@@ -34,8 +43,8 @@
         />
       </div>
 
-      <div class="form-group">
-        <label for="contact-email">Email</label>
+      <div class="form-group underlined">
+        <label class="field-label" for="contact-email">Email</label>
         <input
           id="contact-email"
           type="email"
@@ -45,8 +54,8 @@
         />
       </div>
 
-      <div class="form-group">
-        <label for="contact-company">Company <span class="optional">(optional)</span></label>
+      <div class="form-group underlined">
+        <label class="field-label" for="contact-company">Company <span class="optional">(optional)</span></label>
         <input
           id="contact-company"
           type="text"
@@ -55,8 +64,8 @@
         />
       </div>
 
-      <div class="form-group">
-        <label for="contact-phone">Phone <span class="optional">(optional)</span></label>
+      <div class="form-group underlined">
+        <label class="field-label" for="contact-phone">Phone <span class="optional">(optional)</span></label>
         <input
           id="contact-phone"
           type="tel"
@@ -65,8 +74,8 @@
         />
       </div>
 
-      <div class="form-group">
-        <label for="contact-message">Message</label>
+      <div class="form-group underlined">
+        <label class="field-label" for="contact-message">Message</label>
         <textarea
           id="contact-message"
           bind:value={message}
@@ -101,45 +110,86 @@
   #contact {
     max-width: 600px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 3rem var(--section-gutter);
   }
 
   h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: var(--accent);
-  }
-
-  .form-group {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    letter-spacing: -0.01em;
+    color: var(--text-h);
+    font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;
     margin-bottom: 1.25rem;
   }
 
-  label {
+  .lead-in {
+    font-size: 1rem;
+    line-height: 1.65;
+    opacity: 0.82;
+    max-width: 52ch;
+    margin: 0 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .form-group.underlined {
+    margin-bottom: 1.75rem;
+  }
+
+  .field-label {
     display: block;
-    margin-bottom: 0.35rem;
-    font-size: 0.95rem;
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.75;
+    margin-bottom: 0.4rem;
   }
 
   .optional {
-    opacity: 0.5;
-    font-size: 0.85rem;
+    opacity: 0.6;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
   }
 
-  input, textarea {
+  .underlined input,
+  .underlined textarea {
     width: 100%;
-    padding: 0.6rem 0.75rem;
-    border: 1px solid var(--border, rgba(255,255,255,0.15));
-    border-radius: 6px;
-    background: var(--input-bg, rgba(255,255,255,0.05));
-    color: inherit;
-    font-family: inherit;
-    font-size: 0.95rem;
+    padding: 0.35rem 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-h);
+    font-family: var(--serif-display);
+    font-variation-settings: 'SOFT' 0, 'WONK' 0;
+    font-size: 1rem;
+    line-height: 1.5;
     box-sizing: border-box;
+    transition: border-color 0.2s ease;
   }
 
-  input:focus, textarea:focus {
+  .underlined textarea {
+    resize: vertical;
+    min-height: 5rem;
+  }
+
+  .underlined input::placeholder,
+  .underlined textarea::placeholder {
+    color: var(--text);
+    opacity: 0.35;
+    font-style: italic;
+  }
+
+  .underlined input:focus,
+  .underlined textarea:focus {
     outline: none;
-    border-color: var(--accent);
+    border-bottom-color: var(--accent);
+    border-bottom-width: 2px;
+    padding-bottom: calc(0.35rem - 1px);
   }
 
   .gdpr {

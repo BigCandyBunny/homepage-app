@@ -1,0 +1,21 @@
+# just Results Consulting — robots policy
+# This site is a public professional profile and welcomes indexing by
+# both traditional search engines and LLM-based agents.
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
