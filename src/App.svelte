@@ -220,7 +220,7 @@
     font-size: clamp(2rem, 4.2vw, 3.4rem);
     line-height: 1.08;
     font-weight: 400;
-    color: var(--text-h);
+    color: var(--accent);
     letter-spacing: -0.015em;
     font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;
     margin: 0;

@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { openBrief, preloadBrief } from './briefDialog.svelte'
+  import { openBrief, openBriefHtml, preloadBrief } from './briefDialog.svelte'
+  import { renderMarkdown } from './renderMarkdown'
+  import cvMarkdown from './cv_onepager.md?raw'
+
+  const cvHtml = renderMarkdown(cvMarkdown)
+  const techStackSrc = '/briefs/tech_stack.png'
 </script>
 
 <section id="about" aria-labelledby="about-heading">
@@ -24,11 +29,16 @@
     <div class="cv-link">
       <button
         type="button"
-        data-src="/briefs/TechStack_CV.png"
-        onpointerenter={() => preloadBrief('/briefs/TechStack_CV.png')}
-        onfocus={() => preloadBrief('/briefs/TechStack_CV.png')}
-        onclick={(e) => openBrief('/briefs/TechStack_CV.png', 'TechStack and CV', e.currentTarget)}
-      >TechStack and CV</button>
+        data-src={techStackSrc}
+        onpointerenter={() => preloadBrief(techStackSrc)}
+        onfocus={() => preloadBrief(techStackSrc)}
+        onclick={(e) => openBrief(techStackSrc, 'TechStack', e.currentTarget)}
+      >TechStack</button>
+      <button
+        type="button"
+        data-kind="cv"
+        onclick={(e) => openBriefHtml(cvHtml, 'CV', e.currentTarget)}
+      >CV</button>
     </div>
     <div class="contact-info">
       <a href="mailto:leif.naess@justresults.no">leif.naess@justresults.no</a>
@@ -57,6 +67,9 @@
 
   .cv-link {
     margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
   .cv-link button {

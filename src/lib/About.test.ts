@@ -39,11 +39,18 @@ describe('About component', () => {
     expect(contactInfo!.textContent).toMatch(/justresults\.no/)
   })
 
-  it('renders a TechStack and CV button that triggers the in-page BriefDialog', () => {
+  it('renders a TechStack button that triggers the in-page BriefDialog with the tech stack image', () => {
     const { container } = render(About)
-    const btn = screen.getByRole('button', { name: /techstack and cv/i }) as HTMLButtonElement
+    const btn = screen.getByRole('button', { name: /^techstack$/i }) as HTMLButtonElement
     expect(btn).toBeTruthy()
-    expect(btn.dataset.src).toContain('/briefs/TechStack_CV.png')
+    expect(btn.dataset.src).toContain('/briefs/tech_stack.png')
     expect(container.querySelectorAll('a[target="_blank"]').length).toBe(0)
+  })
+
+  it('renders a separate CV button alongside TechStack', () => {
+    render(About)
+    const cvBtn = screen.getByRole('button', { name: /^cv$/i }) as HTMLButtonElement
+    expect(cvBtn).toBeTruthy()
+    expect(cvBtn.dataset.kind).toBe('cv')
   })
 })

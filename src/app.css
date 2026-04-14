@@ -59,7 +59,7 @@ h2,
 h3 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--accent);
   font-optical-sizing: auto;
   font-variation-settings: 'SOFT' 0, 'WONK' 0;
   letter-spacing: -0.01em;

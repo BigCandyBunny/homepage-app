@@ -2,6 +2,7 @@ interface BriefState {
   open: boolean
   src: string
   alt: string
+  html: string
   trigger: HTMLElement | null
 }
 
@@ -9,12 +10,22 @@ export const briefState = $state<BriefState>({
   open: false,
   src: '',
   alt: '',
+  html: '',
   trigger: null,
 })
 
 export function openBrief(src: string, alt: string, trigger?: HTMLElement | null) {
   briefState.src = src
   briefState.alt = alt
+  briefState.html = ''
+  briefState.trigger = trigger ?? (document.activeElement as HTMLElement | null)
+  briefState.open = true
+}
+
+export function openBriefHtml(html: string, alt: string, trigger?: HTMLElement | null) {
+  briefState.src = ''
+  briefState.alt = alt
+  briefState.html = html
   briefState.trigger = trigger ?? (document.activeElement as HTMLElement | null)
   briefState.open = true
 }

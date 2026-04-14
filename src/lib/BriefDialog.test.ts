@@ -88,22 +88,34 @@ describe('Phase 4.8a — BriefDialog in-page lightbox', () => {
   })
 })
 
-describe('Phase 4.8a — About CV uses the same BriefDialog', () => {
-  it('CV trigger is a button, not a new-tab anchor', () => {
+describe('Phase 4.8a — About TechStack and CV use the same BriefDialog', () => {
+  it('TechStack and CV triggers are buttons, not new-tab anchors', () => {
     const { container } = render(App)
     const about = container.querySelector('#about')!
     expect(about.querySelectorAll('a[target="_blank"]').length).toBe(0)
-    const cvBtn = screen.getByRole('button', { name: /techstack and cv/i })
-    expect(cvBtn).toBeTruthy()
+    expect(screen.getByRole('button', { name: /^techstack$/i })).toBeTruthy()
+    expect(screen.getByRole('button', { name: /^cv$/i })).toBeTruthy()
   })
 
-  it('clicking the CV button opens the BriefDialog with the CV image', async () => {
+  it('clicking the TechStack button opens the BriefDialog with the tech stack image', async () => {
     const { container } = render(App)
-    const cvBtn = screen.getByRole('button', { name: /techstack and cv/i })
-    await fireEvent.click(cvBtn)
+    const btn = screen.getByRole('button', { name: /^techstack$/i })
+    await fireEvent.click(btn)
     const dialog = container.querySelector('dialog.brief-dialog') as HTMLDialogElement
     expect(dialog.hasAttribute('open')).toBe(true)
     const img = dialog.querySelector('img') as HTMLImageElement
-    expect(img.src).toContain('/briefs/TechStack_CV.png')
+    expect(img.src).toContain('/briefs/tech_stack.png')
+  })
+
+  it('clicking the CV button opens the BriefDialog with CV markdown rendered as HTML', async () => {
+    const { container } = render(App)
+    const btn = screen.getByRole('button', { name: /^cv$/i })
+    await fireEvent.click(btn)
+    const dialog = container.querySelector('dialog.brief-dialog') as HTMLDialogElement
+    expect(dialog.hasAttribute('open')).toBe(true)
+    const htmlWrap = dialog.querySelector('.brief-html') as HTMLElement
+    expect(htmlWrap).toBeTruthy()
+    expect(htmlWrap.textContent).toMatch(/Strategy, Change Management & Technology Executive/)
+    expect(htmlWrap.querySelector('table')).toBeTruthy()
   })
 })

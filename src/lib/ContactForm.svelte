@@ -118,7 +118,7 @@
     font-weight: 400;
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     letter-spacing: -0.01em;
-    color: var(--text-h);
+    color: var(--accent);
     font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;
     margin-bottom: 1.25rem;
   }
