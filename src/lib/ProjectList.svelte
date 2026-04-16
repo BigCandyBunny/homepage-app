@@ -127,13 +127,13 @@
   #projects {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 3rem var(--section-gutter);
+    padding: 2rem var(--section-gutter);
   }
 
   h2 {
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 400;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: var(--accent);
     letter-spacing: -0.01em;
     font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;

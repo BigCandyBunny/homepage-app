@@ -24,8 +24,8 @@
       <span class="section-number" aria-hidden="true">I</span>
       <div class="hero-grid">
         <aside class="founder-card">
-          <div class="portrait" aria-label="Leif Næss — portrait forthcoming">
-            <span class="monogram">LN</span>
+          <div class="portrait">
+            <img src="/leifnaess.png" alt="Leif Næss" class="portrait-img" />
           </div>
           <div class="founder-meta">
             <p class="founder-name">Leif Næss</p>
@@ -136,13 +136,13 @@
   #hero {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem var(--section-gutter) 4rem;
+    padding: 3rem var(--section-gutter) 2.5rem;
   }
 
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(220px, 280px) 1fr;
-    gap: 3.5rem;
+    gap: 2.5rem;
     align-items: start;
   }
 
@@ -165,13 +165,10 @@
       var(--bg-elevated, rgba(38, 52, 88, 0.6));
   }
 
-  .monogram {
-    font-family: var(--serif-display);
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 400;
-    color: var(--accent);
-    letter-spacing: -0.02em;
-    font-variation-settings: 'SOFT' 0, 'WONK' 0;
+  .portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .founder-meta {
@@ -203,7 +200,7 @@
   .hero-copy {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.25rem;
     max-width: 52ch;
   }
 
@@ -281,12 +278,12 @@
 
   @media (max-width: 860px) {
     #hero {
-      padding: 3rem var(--section-gutter) 2.5rem;
+      padding: 2rem var(--section-gutter) 1.5rem;
     }
 
     .hero-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .founder-card {

@@ -22,21 +22,21 @@ Executive with 40+ years of expertise in strategic development, organizational c
 - Built the Norwegian Institute of Systems Engineering (NISE) and its international university network
 
 **NCE Systems Engineering, Kongsberg** | Leader Knowledge Development | 2012 – 2016
-- Developed education and R&D portfolio; facilitated three-cluster collaboration (Raufoss, Halden, Kongsberg)
+- Nurtured education and R&D portfolio; facilitated three-cluster collaboration (Raufoss, Halden, Kongsberg)
 
 **Electric Mobility Norway** | Cluster Leader | 2012 – 2015
 - Led industry-government cluster growth; initiated Innovation Arena Transport 2.0
 
 **Kongsberg Automotive** | VP Strategy & Group Development | 2006 – 2012
-- Orchestrated corporate strategy across five global divisions post-merger
-- Implemented global Lean Product Development and value-based pricing processes
-
+- Facilitated corporate strategy across five global divisions post-merger
+- Organized for value-based pricing processes and participated in Lean Manufacturing initiatives
 **Hydro Automotive Structures** | Director Production System & Technology | 1997 – 2006
-- Led worldwide turnaround through Lean Manufacturing strategy from shop floor to division level
+- Active in worldwide turnaround through Lean Manufacturing strategy from shop floor to division level
 
 **Norsk Hydro Corporate Research Centre** | Section Manager | 1984 – 1997
 - Commissioned large-scale hydrocarbon multiphase flow test facility
 - Established the section for dynamic modelling and simulation
+- Expanded section for chemical engineering research and development
 
 ---
 
@@ -44,8 +44,8 @@ Executive with 40+ years of expertise in strategic development, organizational c
 
 | Degree | Institution | Year | Focus |
 |--------|------------|------|-------|
-| MBA | BI Norwegian Business School | 1997 | Strategy & Technology Management |
-| PhD, Mechanical Engineering | NTNU | 1984 | Large Scale Simulations in Process Industries |
+| MBA | BI Norwegian Business School | 1997 | Strategy, Technology Management & Innovation |
+| PhD, Mechanical Engineering | NTNU | 1984 | Large Scale Simulations and Numerical Analysis in the Process Industries |
 | MSc, Mechanical Engineering | NTNU | 1979 | Applied & Theoretical Thermodynamics |
 
 ---

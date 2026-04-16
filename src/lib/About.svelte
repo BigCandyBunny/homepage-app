@@ -4,7 +4,7 @@
   import cvMarkdown from './cv_onepager.md?raw'
 
   const cvHtml = renderMarkdown(cvMarkdown)
-  const techStackSrc = '/briefs/tech_stack.png'
+  const techStackSrc = '/briefs/tech_stack_light.png'
 </script>
 
 <section id="about" aria-labelledby="about-heading">
@@ -29,7 +29,6 @@
     <div class="cv-link">
       <button
         type="button"
-        data-src={techStackSrc}
         onpointerenter={() => preloadBrief(techStackSrc)}
         onfocus={() => preloadBrief(techStackSrc)}
         onclick={(e) => openBrief(techStackSrc, 'TechStack', e.currentTarget)}
@@ -51,12 +50,12 @@
   #about {
     max-width: 800px;
     margin: 0 auto;
-    padding: 3rem var(--section-gutter);
+    padding: 2rem var(--section-gutter);
   }
 
   h2 {
     font-size: 1.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: var(--accent);
   }
 

@@ -120,6 +120,9 @@
     max-height: 100vh;
     overflow: hidden;
     box-shadow: none;
+  }
+
+  .brief-dialog[open] {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,6 +141,12 @@
     margin: 0 auto;
     transition: transform 0.08s ease-out;
     will-change: transform;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .brief-dialog img {
+      filter: invert(0.85) hue-rotate(180deg);
+    }
   }
 
   .brief-html {

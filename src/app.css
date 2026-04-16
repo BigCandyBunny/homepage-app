@@ -37,7 +37,7 @@
     --bg-nav: rgba(245, 242, 235, 0.92);
     --bg-elevated: rgba(240, 236, 226, 0.95);
     --text: #3a3525;
-    --text-h: #1a1710;
+    --text-h: #2a3a6e;
     --accent: #2a3a6e;
     --border: rgba(42, 58, 110, 0.15);
     --input-bg: rgba(0, 0, 0, 0.04);
@@ -99,8 +99,6 @@ main > section:nth-of-type(4) { animation-delay: 340ms; }
 @media (prefers-reduced-motion: reduce) {
   main > section {
     animation: none;
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -113,7 +111,7 @@ main > section:nth-of-type(4) { animation-delay: 340ms; }
   color: var(--accent);
   opacity: 0.75;
   padding-bottom: 0.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
   width: max-content;
   min-width: 2.5rem;
@@ -124,7 +122,7 @@ main > section:nth-of-type(4) { animation-delay: 340ms; }
     font-size: 0.95rem;
     letter-spacing: 0.2em;
     padding-bottom: 0.35rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     min-width: 2rem;
   }
 }

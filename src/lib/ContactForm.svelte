@@ -110,7 +110,7 @@
   #contact {
     max-width: 600px;
     margin: 0 auto;
-    padding: 3rem var(--section-gutter);
+    padding: 2rem var(--section-gutter);
   }
 
   h2 {
@@ -120,7 +120,7 @@
     letter-spacing: -0.01em;
     color: var(--accent);
     font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .lead-in {
@@ -128,13 +128,13 @@
     line-height: 1.65;
     opacity: 0.82;
     max-width: 52ch;
-    margin: 0 0 2.5rem;
-    padding-bottom: 1.75rem;
+    margin: 0 0 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
   }
 
   .form-group.underlined {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .field-label {
