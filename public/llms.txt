@@ -1,16 +1,16 @@
 # just Results Consulting
 
-> Strategy, change management, and technology advisory delivered as one practice. Four decades bridging boards and shop floors, with equal depth in process/energy and discrete manufacturing — a rare pairing on the same desk.
+> AI, technology, strategy, change management advisory delivered as one practice. Bridging boards and shop floors, with equal depth in process/energy and discrete manufacturing industries for enterprises and SMEs.
 
 just Results Consulting a.s is a Norwegian advisory firm founded by Leif Næss (MBA, PhD, MSc). The practice serves industrial clients, educational institutions, and government organizations across Norway, Europe, and worldwide.
 
 ## Practice areas
 
 - **Strategy** — corporate strategy facilitation, positioning, and execution
-- **Change management** — large-scale organizational change, corporate turnarounds, merger integration
-- **Technology** — technology-driven innovation, lean manufacturing implementation
+- **Change management** — large-scale organizational change, corporate turnarounds, business process optimization
+- **Technology** — technology-driven innovation and production processes
 
-Every engagement begins with a diagnosis, not a deck. We sit with the board and the shop floor in equal measure, map where intent meets constraint, and then propose the smallest change that moves the result. Most mandates run eight to twenty weeks and leave the organisation able to make the next decision without us.
+Every engagement begins with a diagnosis. We sit with the board, managers, experts, and the shop floor in equal measure and map where intent meets constraint. Then we propose the smallest change that moves the result. Most mandates run eight to twenty weeks and leave the organisation able to make the next decision without us.
 
 ## Sectors
 
@@ -26,4 +26,6 @@ Every engagement begins with a diagnosis, not a deck. We sit with the board and 
 
 ## About the founder
 
-Leif Næss is founder and CEO of just Results Consulting. He holds an MBA, a PhD, and an MSc, and has spent forty years advising boards and shop floors across global industrial, academic, and public sectors. His work spans corporate turnarounds, merger integrations, lean manufacturing implementation, and national cluster development initiatives.
+AI has been gaining ground and focus and I will support building efficiency into the companies that consider AI adaptation. I will help diagnosing where AI may be suitable, analyze what kind of results the use of this technology can bring, and support working out the specific solution your company has the need for.
+
+Leif Næss is founder and CEO of just Results Consulting and has been working on practical AI application including agents, since 2024. He holds an MBA, a PhD, and an MSc, and has been advising boards and shop floors across global industrial, academic, and public sectors. His work spans corporate turnarounds, merger integrations, business process optimization and change, and national cluster development initiatives.
