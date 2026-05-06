@@ -8,6 +8,11 @@ const inline = (s: string): string =>
   escape(s)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\bhttps?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (url) => `<a href="${url}">${url}</a>`)
+    .replace(
+      /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/g,
+      (email) => `<a href="mailto:${email}">${email}</a>`,
+    )
 
 export function renderMarkdown(md: string): string {
   const blocks = md.replace(/\r\n/g, '\n').trim().split(/\n\n+/)
@@ -22,6 +27,10 @@ export function renderMarkdown(md: string): string {
       continue
     }
 
+    if (block.startsWith('### ')) {
+      out.push(`<h3>${inline(block.slice(4))}</h3>`)
+      continue
+    }
     if (block.startsWith('## ')) {
       out.push(`<h2>${inline(block.slice(3))}</h2>`)
       continue
@@ -32,6 +41,12 @@ export function renderMarkdown(md: string): string {
     }
 
     const lines = block.split('\n')
+
+    if (lines.every((l) => l.startsWith('>'))) {
+      const text = lines.map((l) => l.replace(/^>\s?/, '')).join(' ')
+      out.push(`<blockquote>${inline(text)}</blockquote>`)
+      continue
+    }
 
     if (lines.length >= 2 && lines.every((l) => l.startsWith('|'))) {
       const cells = (l: string): string[] =>

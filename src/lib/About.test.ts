@@ -10,10 +10,10 @@ describe('About component', () => {
     expect(heading!.textContent).toMatch(/just Results Consulting/)
   })
 
-  it('does not duplicate the founder block — that now lives in the hero', () => {
+  it('does not duplicate the founder card — that now lives in the hero', () => {
     const { container } = render(About)
     expect(container.querySelector('.founder')).toBeNull()
-    expect(container.textContent).not.toMatch(/Leif Næss/)
+    expect(container.querySelector('.portrait')).toBeNull()
   })
 
   it('renders a curated professional background summary', () => {
@@ -34,9 +34,9 @@ describe('About component', () => {
 
   it('mentions the domain justresults.no', () => {
     const { container } = render(About)
-    const contactInfo = container.querySelector('.contact-info')
-    expect(contactInfo).toBeTruthy()
-    expect(contactInfo!.textContent).toMatch(/justresults\.no/)
+    const summary = container.querySelector('.summary')
+    expect(summary).toBeTruthy()
+    expect(summary!.textContent).toMatch(/justresults\.no/)
   })
 
   it('renders a TechStack button that triggers the in-page BriefDialog with the tech stack image', () => {

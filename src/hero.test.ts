@@ -47,19 +47,20 @@ describe('Phase 2.4 — Editorial hero with founder block', () => {
   })
 })
 
-describe('Phase 2.5 — About de-duplicated', () => {
-  it('no longer renders the founder name or titles in #about', () => {
+describe('Phase 2.5 — About sourced from llms.txt', () => {
+  it('does not duplicate the hero founder card inside #about', () => {
     const { container } = render(App)
-    const about = container.querySelector('#about')
-    expect(about).toBeTruthy()
-    expect(about!.textContent).not.toMatch(/Leif Næss/)
-    expect(about!.textContent).not.toMatch(/MBA,\s*PhD,\s*MSc/)
+    const about = container.querySelector('#about')!
+    expect(about.querySelector('.founder-card')).toBeNull()
+    expect(about.querySelector('.portrait')).toBeNull()
   })
 
-  it('still renders the firm positioning paragraphs in #about', () => {
+  it('renders the firm summary content in #about', () => {
     const { container } = render(App)
     const about = container.querySelector('#about')!
     expect(about.textContent).toMatch(/just Results Consulting/)
-    expect(about.textContent).toMatch(/strategy and change management/i)
+    expect(about.textContent).toMatch(/strategy/i)
+    expect(about.textContent).toMatch(/change management/i)
+    expect(about.textContent).toMatch(/technology/i)
   })
 })

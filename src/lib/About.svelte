@@ -2,8 +2,14 @@
   import { openBrief, openBriefHtml, preloadBrief } from './briefDialog.svelte'
   import { renderMarkdown } from './renderMarkdown'
   import cvMarkdown from './cv_onepager.md?raw'
+  import aboutMarkdown from '../../public/llms.txt?raw'
 
   const cvHtml = renderMarkdown(cvMarkdown)
+  // Strip the leading top-level `# heading` (the section already has an <h2>)
+  // and bump remaining `## ` to `### ` so the heading hierarchy is h2 > h3.
+  const aboutHtml = renderMarkdown(
+    aboutMarkdown.replace(/^#\s.*\n+/, '').replace(/^## /gm, '### '),
+  )
   const techStackSrc = '/briefs/tech_stack_light.png'
 </script>
 
@@ -11,21 +17,7 @@
   <span class="section-number" aria-hidden="true">IV</span>
   <h2 id="about-heading">About just Results Consulting</h2>
   <div class="about-content">
-    <div class="summary">
-      <p>
-        just Results Consulting a.s provides strategy and change management
-        consultancy to industrial clients, educational institutions, and
-        government organizations. With over 40 years of expertise bridging
-        technology and commercial success, we deliver results across global
-        industrial, academic, and public sectors.
-      </p>
-      <p>
-        Our experience spans corporate strategy facilitation, large-scale
-        organizational change management, lean manufacturing implementation,
-        and technology-driven innovation — from corporate turnarounds and
-        merger integrations to national cluster development initiatives.
-      </p>
-    </div>
+    <div class="summary">{@html aboutHtml}</div>
     <div class="cv-link">
       <button
         type="button"
@@ -38,10 +30,6 @@
         data-kind="cv"
         onclick={(e) => openBriefHtml(cvHtml, 'CV', e.currentTarget)}
       >CV</button>
-    </div>
-    <div class="contact-info">
-      <a href="mailto:leif.naess@justresults.no">leif.naess@justresults.no</a>
-      <span class="domain">justresults.no</span>
     </div>
   </div>
 </section>
@@ -59,9 +47,50 @@
     color: var(--accent);
   }
 
-  .summary p {
+  .summary :global(p) {
     line-height: 1.7;
     margin-bottom: 1rem;
+  }
+
+  .summary :global(blockquote) {
+    margin: 0 0 1.25rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: 2px solid var(--accent);
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--text-h);
+    font-variation-settings: 'SOFT' 0, 'WONK' 0;
+  }
+
+  .summary :global(h3) {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    margin: 1.75rem 0 0.6rem;
+  }
+
+  .summary :global(ul) {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+  }
+
+  .summary :global(li) {
+    margin: 0.3rem 0;
+    line-height: 1.6;
+  }
+
+  .summary :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .summary :global(a:hover) {
+    text-decoration: underline;
   }
 
   .cv-link {
@@ -93,26 +122,5 @@
   .cv-link button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-  }
-
-  .contact-info {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .contact-info a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .contact-info a:hover {
-    text-decoration: underline;
-  }
-
-  .domain {
-    opacity: 0.6;
-    font-size: 0.9rem;
   }
 </style>
