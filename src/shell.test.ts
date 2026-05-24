@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/svelte'
 import App from './App.svelte'
 
-const sectionIds = ['hero', 'projects', 'contact', 'about'] as const
-const romanByIndex = ['I', 'II', 'III', 'IV'] as const
+const sectionIds = ['hero', 'projects', 'how-we-work', 'contact', 'about'] as const
+const romanByIndex = ['I', 'II', 'III', 'IV', 'V'] as const
 
 describe('Phase 3.6 — Editorial shell structure', () => {
   it('wraps page content in a <main> landmark', () => {

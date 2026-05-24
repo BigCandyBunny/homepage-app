@@ -20,21 +20,21 @@ describe('Phase 2.4 — Editorial hero with founder block', () => {
     expect(portrait!.getAttribute('aria-label')).toMatch(/Leif Næss/)
   })
 
-  it('shows three positioning statements in the hero', () => {
+  it('shows three positioning anchors in the hero (AI focus / mandate length / outcome)', () => {
     const { container } = render(App)
     const hero = container.querySelector('#hero')!
     const text = hero.textContent ?? ''
-    expect(text).toMatch(/40\+?\s*years/i)
-    expect(text).toMatch(/strategy.*change.*technology/i)
-    expect(text).toMatch(/process.*energy.*manufacturing/i)
+    expect(text).toMatch(/(30\s*Nov|November\s*30).*2022/i)
+    expect(text).toMatch(/8.{1,3}20\s*weeks/i)
+    expect(text).toMatch(/team\s+decides?\s+without\s+us/i)
   })
 
-  it('makes the dual process/energy + manufacturing experience explicit', () => {
+  it('names the three target sectors (process / energy / manufacturing) in the hero', () => {
     const { container } = render(App)
     const hero = container.querySelector('#hero')!
     const text = hero.textContent ?? ''
-    expect(text).toMatch(/equal/i)
-    expect(text).toMatch(/process.*energy/i)
+    expect(text).toMatch(/process/i)
+    expect(text).toMatch(/energy/i)
     expect(text).toMatch(/manufacturing/i)
   })
 
