@@ -12,7 +12,6 @@ export interface Project {
   }
 }
 
-// Placeholder data — replace with real content from GitHub repos
 export const projects: Project[] = [
   {
     title: 'CatalyzeAI',
@@ -51,32 +50,6 @@ export const projects: Project[] = [
       visualization: ['Markdown'],
       agenticBehaviour: 'Context-aware information retrieval',
       clientPreparations: 'Existing documentation and project artifacts',
-    },
-  },
-  {
-    title: 'Project C',
-    businessImpact: 'Project C business impact',
-    audience: 'Project C users',
-    description: 'Project C characteristics and features',
-    techStack: {
-      languages: ['Python'],
-      databases: ['SurrealDB'],
-      visualization: ['D3.js'],
-      agenticBehaviour: 'Autonomous anomaly detection',
-      clientPreparations: 'API access to trading systems',
-    },
-  },
-  {
-    title: 'Project D',
-    businessImpact: 'Project D business impact',
-    audience: 'Project D users',
-    description: 'Project D characteristics and features',
-    techStack: {
-      languages: ['Python'],
-      databases: ['PostgreSQL'],
-      visualization: ['Plotly', 'Matplotlib'],
-      agenticBehaviour: 'Automated signal generation',
-      clientPreparations: 'Historical market data access',
     },
   },
 ]

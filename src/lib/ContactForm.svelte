@@ -11,6 +11,7 @@
     e.preventDefault()
     if (!gdprConsent) return
     submitted = true
+    ;(window as unknown as { plausible?: (event: string) => void }).plausible?.('Contact: Submit')
   }
 </script>
 

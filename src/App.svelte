@@ -4,6 +4,8 @@
   import About from './lib/About.svelte'
   import BriefDialog from './lib/BriefDialog.svelte'
   import { projects } from './lib/data/projects'
+
+  const bookingUrl = 'https://cal.com/leif-naess/discovery'
 </script>
 
 <div class="app">
@@ -31,6 +33,13 @@
             <p class="founder-name">Leif Næss</p>
             <p class="founder-titles">MBA, PhD, MSc</p>
             <p class="founder-role">Founder &amp; CEO</p>
+            <a
+              class="founder-cta"
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-plausible-event-name="Founder CTA: Book"
+            >Book a conversation</a>
           </div>
         </aside>
 
@@ -58,7 +67,16 @@
             </div>
           </dl>
 
-          <a class="cta" href="#projects">See recent projects →</a>
+          <div class="hero-ctas">
+            <a
+              class="cta cta-primary"
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-plausible-event-name="Hero CTA: Book"
+            >Book a 30-minute conversation →</a>
+            <a class="cta cta-secondary" href="#projects">Or see recent projects</a>
+          </div>
         </div>
       </div>
     </section>
@@ -261,19 +279,70 @@
     line-height: 1.25;
   }
 
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.75rem;
+  }
+
   .cta {
-    align-self: flex-start;
     font-size: 0.9rem;
     letter-spacing: 0.04em;
     color: var(--accent);
     text-decoration: none;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--accent);
-    transition: transform 0.2s ease, letter-spacing 0.2s ease;
+    transition: transform 0.2s ease, letter-spacing 0.2s ease, background 0.15s, color 0.15s;
   }
 
-  .cta:hover {
+  .cta-primary {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+  }
+
+  .cta-primary:hover {
+    letter-spacing: 0.06em;
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .cta-secondary {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--accent);
+    opacity: 0.85;
+  }
+
+  .cta-secondary:hover {
     letter-spacing: 0.08em;
+    opacity: 1;
+  }
+
+  .founder-cta {
+    margin-top: 0.85rem;
+    align-self: flex-start;
+    font-family: var(--sans);
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.45rem 0.95rem;
+    border: 1px solid var(--accent);
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .founder-cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .founder-cta:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   @media (max-width: 860px) {
