@@ -1,5 +1,6 @@
 <script lang="ts">
   import ProjectList from './lib/ProjectList.svelte'
+  import HowWeWork from './lib/HowWeWork.svelte'
   import ContactForm from './lib/ContactForm.svelte'
   import About from './lib/About.svelte'
   import BriefDialog from './lib/BriefDialog.svelte'
@@ -44,26 +45,26 @@
         </aside>
 
         <div class="hero-copy">
-          <p class="eyebrow">just Results Consulting</p>
-          <h1 id="hero-heading">Strategy, change and technology — delivered as one practice.</h1>
+          <p class="eyebrow">Agentic AI for process, energy &amp; manufacturing</p>
+          <h1 id="hero-heading">Decades of bridging boards and shop floors — full-time on Agentic AI since November 30, 2022.</h1>
           <p class="positioning">
-            Four decades of advising boards and shop floors alike, with equal
-            depth in process &amp; energy and discrete manufacturing — a rare
-            pairing on the same desk.
+            Eight-to-twenty-week mandates that leave your team able to make
+            the next decision without us. Strategy, change, and Agentic AI
+            delivered as one practice.
           </p>
 
           <dl class="stats">
             <div class="stat">
-              <dt>Experience</dt>
-              <dd>40+ years</dd>
+              <dt>AI focus</dt>
+              <dd>Full-time since 30 Nov 2022</dd>
             </div>
             <div class="stat">
-              <dt>Practice</dt>
-              <dd>strategy · change · technology</dd>
+              <dt>Mandate length</dt>
+              <dd>8–20 weeks, fixed scope</dd>
             </div>
             <div class="stat">
-              <dt>Sectors</dt>
-              <dd>process · energy · manufacturing</dd>
+              <dt>Outcome</dt>
+              <dd>Months 6–12+: team decides without us</dd>
             </div>
           </dl>
 
@@ -82,6 +83,7 @@
     </section>
 
     <ProjectList {projects} />
+    <HowWeWork />
     <ContactForm />
     <About />
   </main>

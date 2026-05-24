@@ -14,7 +14,7 @@
 </script>
 
 <section id="about" aria-labelledby="about-heading">
-  <span class="section-number" aria-hidden="true">IV</span>
+  <span class="section-number" aria-hidden="true">V</span>
   <h2 id="about-heading">About just Results Consulting</h2>
   <div class="about-content">
     <div class="summary">{@html aboutHtml}</div>

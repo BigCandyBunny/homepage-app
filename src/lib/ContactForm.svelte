@@ -16,7 +16,7 @@
 </script>
 
 <section id="contact" aria-labelledby="contact-heading">
-  <span class="section-number" aria-hidden="true">III</span>
+  <span class="section-number" aria-hidden="true">IV</span>
   <h2 id="contact-heading">Contact Us</h2>
 
   <p class="lead-in">
