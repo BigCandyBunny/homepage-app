@@ -5,8 +5,8 @@
   <p class="lede">
     This practice runs on the same Agentic AI stack we'd help your team
     build. Claude Code is the daily tool; AIS-OS provides context,
-    decisions, and continuity across engagements; the homepage you are
-    reading is served from on-prem hardware in our office.
+    decisions, and continuity across engagements; analytics, internal
+    services, and knowledge workloads run on on-prem hardware in our office.
   </p>
 
   <p class="stack-line">
