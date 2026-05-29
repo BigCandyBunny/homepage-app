@@ -63,21 +63,21 @@ describe('ProjectList component', () => {
     render(ProjectList, { props: { projects: mockProjects } })
     expect(screen.getByText(/every claim traceable/)).toBeTruthy()
     expect(screen.getByText(/operational intelligence/)).toBeTruthy()
-    expect(screen.getByText(/Real-time trade monitoring/)).toBeTruthy()
+    expect(screen.getByText(/Project C business impact/)).toBeTruthy()
   })
 
   it('displays audience for each project', () => {
     render(ProjectList, { props: { projects: mockProjects } })
     expect(screen.getByText(/Senior professionals/)).toBeTruthy()
     expect(screen.getByText(/Small- and medium-sized enterprises/)).toBeTruthy()
-    expect(screen.getByText(/Portfolio managers/)).toBeTruthy()
+    expect(screen.getByText(/Project C users/)).toBeTruthy()
   })
 
   it('displays short description for each project', () => {
     render(ProjectList, { props: { projects: mockProjects } })
     expect(screen.getByText(/Private knowledge hub/)).toBeTruthy()
     expect(screen.getByText(/On-premises platform/)).toBeTruthy()
-    expect(screen.getByText(/Trade flow analysis/)).toBeTruthy()
+    expect(screen.getByText(/Project C characteristics/)).toBeTruthy()
   })
 
   it('limits display to max 10 projects', () => {

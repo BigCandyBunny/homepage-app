@@ -115,7 +115,7 @@ describe('Phase 4.8a — About TechStack and CV use the same BriefDialog', () =>
     expect(dialog.hasAttribute('open')).toBe(true)
     const htmlWrap = dialog.querySelector('.brief-html') as HTMLElement
     expect(htmlWrap).toBeTruthy()
-    expect(htmlWrap.textContent).toMatch(/Strategy, Change Management & Technology Executive/)
+    expect(htmlWrap.textContent).toMatch(/Strategy, Change Management & Agentic AI Executive/)
     expect(htmlWrap.querySelector('table')).toBeTruthy()
   })
 })
