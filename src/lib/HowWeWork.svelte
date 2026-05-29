@@ -4,13 +4,22 @@
 
   <p class="lede">
     This practice runs on the same Agentic AI stack we'd help your team
-    build. Claude Code is the daily tool; AIS-OS provides context,
-    decisions, and continuity across engagements; analytics, internal
-    services, and knowledge workloads run on on-prem hardware in our office.
+    build. Claude Code is the daily tool; Practice Cockpit provides the
+    operating substrate — morning briefing, status board, sparring
+    queue, and the decision log that carries context across engagements.
+    Analytics, internal services, and knowledge workloads run on
+    on-prem hardware in our office.
   </p>
 
   <p class="stack-line">
     HPE ML350 · Coolify · Plausible analytics · OPNsense · Cloudflare Tunnel
+  </p>
+
+  <p class="credits">
+    Practice Cockpit is built on the
+    <a href="https://www.skool.com/ai-automation-society" target="_blank" rel="noopener noreferrer">AIS-OS framework</a>
+    by Nate Herk for the AI Automation Society community.
+    The Three Ms of AI™ (Mindset, Method, Machine) is a trademark of Nate Herk.
   </p>
 </section>
 
@@ -44,5 +53,23 @@
     padding-top: 1rem;
     border-top: 1px solid var(--border);
     margin: 0;
+  }
+
+  .credits {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--text);
+    opacity: 0.7;
+    margin: 1rem 0 0;
+    max-width: 62ch;
+  }
+
+  .credits a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .credits a:hover {
+    text-decoration: underline;
   }
 </style>

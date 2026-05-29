@@ -7,8 +7,9 @@
   }
 
   const briefProjects: Record<string, string> = {
-    'AIOS': 'AIOS',
-    'CatalyzeAI': 'CatalyzeAI',
+    'Practice Cockpit': 'practice_cockpit_system',
+    'Pocket Polymath': 'pocket_polymath_system',
+    'CatalyzeAI': 'catalyze_ai_system',
   }
 
   let { projects }: Props = $props()
@@ -23,8 +24,7 @@
 
   function preloadRow(title: string) {
     if (!(title in briefProjects)) return
-    preloadBrief(`/briefs/${briefProjects[title]}_Tech_Brief.png`)
-    preloadBrief(`/briefs/${briefProjects[title]}_Exec_Brief.png`)
+    preloadBrief(`/briefs/${briefProjects[title]}.png`)
   }
 
   function handleRowKey(e: KeyboardEvent, title: string) {
@@ -91,26 +91,15 @@
                     <div class="brief-links">
                       <button
                         type="button"
-                        data-src="/briefs/{briefProjects[project.title]}_Tech_Brief.png"
-                        onpointerenter={() => preloadBrief(`/briefs/${briefProjects[project.title]}_Tech_Brief.png`)}
-                        onfocus={() => preloadBrief(`/briefs/${briefProjects[project.title]}_Tech_Brief.png`)}
+                        data-src="/briefs/{briefProjects[project.title]}.png"
+                        onpointerenter={() => preloadBrief(`/briefs/${briefProjects[project.title]}.png`)}
+                        onfocus={() => preloadBrief(`/briefs/${briefProjects[project.title]}.png`)}
                         onclick={(e) => openBrief(
-                          `/briefs/${briefProjects[project.title]}_Tech_Brief.png`,
-                          `${project.title} — Tech Brief`,
+                          `/briefs/${briefProjects[project.title]}.png`,
+                          `${project.title} — System overview`,
                           e.currentTarget,
                         )}
-                      >Tech Brief</button>
-                      <button
-                        type="button"
-                        data-src="/briefs/{briefProjects[project.title]}_Exec_Brief.png"
-                        onpointerenter={() => preloadBrief(`/briefs/${briefProjects[project.title]}_Exec_Brief.png`)}
-                        onfocus={() => preloadBrief(`/briefs/${briefProjects[project.title]}_Exec_Brief.png`)}
-                        onclick={(e) => openBrief(
-                          `/briefs/${briefProjects[project.title]}_Exec_Brief.png`,
-                          `${project.title} — Executive Brief`,
-                          e.currentTarget,
-                        )}
-                      >Executive Brief</button>
+                      >System overview</button>
                     </div>
                   {/if}
                 </div>

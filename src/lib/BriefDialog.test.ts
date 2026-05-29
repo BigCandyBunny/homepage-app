@@ -32,11 +32,11 @@ function findRowByTitle(container: HTMLElement, title: string): HTMLElement {
   return row
 }
 
-async function openAiosBrief(container: HTMLElement): Promise<HTMLDialogElement> {
-  const aiosRow = findRowByTitle(container, 'AIOS')
-  await fireEvent.click(aiosRow)
-  const techBtn = screen.getByRole('button', { name: /tech brief/i })
-  await fireEvent.click(techBtn)
+async function openPocketPolymathBrief(container: HTMLElement): Promise<HTMLDialogElement> {
+  const row = findRowByTitle(container, 'Pocket Polymath')
+  await fireEvent.click(row)
+  const btn = screen.getByRole('button', { name: /system overview/i })
+  await fireEvent.click(btn)
   await tick()
   const dialog = container.querySelector('dialog.brief-dialog') as HTMLDialogElement
   expect(dialog).toBeTruthy()
@@ -46,17 +46,17 @@ async function openAiosBrief(container: HTMLElement): Promise<HTMLDialogElement>
 describe('Phase 4.8a — BriefDialog in-page lightbox', () => {
   it('clicking a brief button opens a dialog showing the correct image', async () => {
     const { container } = render(App)
-    const dialog = await openAiosBrief(container)
+    const dialog = await openPocketPolymathBrief(container)
     expect(dialog.hasAttribute('open')).toBe(true)
     expect(dialog.getAttribute('aria-modal')).toBe('true')
     const img = dialog.querySelector('img') as HTMLImageElement
     expect(img).toBeTruthy()
-    expect(img.src).toContain('/briefs/AIOS_Tech_Brief.png')
+    expect(img.src).toContain('/briefs/pocket_polymath_system.png')
   })
 
   it('pressing Escape closes the dialog', async () => {
     const { container } = render(App)
-    const dialog = await openAiosBrief(container)
+    const dialog = await openPocketPolymathBrief(container)
     await fireEvent.keyDown(dialog, { key: 'Escape' })
     await tick()
     expect(dialog.hasAttribute('open')).toBe(false)
@@ -64,7 +64,7 @@ describe('Phase 4.8a — BriefDialog in-page lightbox', () => {
 
   it('a popstate event while the dialog is open closes it (iOS back-swipe path)', async () => {
     const { container } = render(App)
-    const dialog = await openAiosBrief(container)
+    const dialog = await openPocketPolymathBrief(container)
     window.dispatchEvent(new PopStateEvent('popstate'))
     await tick()
     await tick()
@@ -73,16 +73,16 @@ describe('Phase 4.8a — BriefDialog in-page lightbox', () => {
 
   it('clicking a brief button does NOT open a new tab (no target="_blank")', async () => {
     const { container } = render(App)
-    const aiosRow = findRowByTitle(container, 'AIOS')
-    await fireEvent.click(aiosRow)
+    const row = findRowByTitle(container, 'Pocket Polymath')
+    await fireEvent.click(row)
     const projectsSection = container.querySelector('#projects')!
     expect(projectsSection.querySelectorAll('a[target="_blank"]').length).toBe(0)
   })
 
   it('the dialog exposes an "open original" escape hatch as a fallback link', async () => {
     const { container } = render(App)
-    const dialog = await openAiosBrief(container)
-    const fallback = dialog.querySelector('a[href*="/briefs/AIOS_Tech_Brief.png"]') as HTMLAnchorElement
+    const dialog = await openPocketPolymathBrief(container)
+    const fallback = dialog.querySelector('a[href*="/briefs/pocket_polymath_system.png"]') as HTMLAnchorElement
     expect(fallback).toBeTruthy()
     expect(fallback.target).toBe('_blank')
   })
@@ -104,7 +104,7 @@ describe('Phase 4.8a — About TechStack and CV use the same BriefDialog', () =>
     const dialog = container.querySelector('dialog.brief-dialog') as HTMLDialogElement
     expect(dialog.hasAttribute('open')).toBe(true)
     const img = dialog.querySelector('img') as HTMLImageElement
-    expect(img.src).toContain('/briefs/tech_stack.png')
+    expect(img.src).toContain('/briefs/tech_stack')
   })
 
   it('clicking the CV button opens the BriefDialog with CV markdown rendered as HTML', async () => {

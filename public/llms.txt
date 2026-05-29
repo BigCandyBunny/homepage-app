@@ -19,6 +19,16 @@ Every engagement begins with a diagnosis. We sit with the board, managers, exper
 - Discrete manufacturing
 - Academic and public-sector clients
 
+## Products and platforms
+
+just Results runs its own practice on the same Agentic AI stack we deploy for clients. Three products share an architectural family — self-hosted, audit-grade, no SaaS lock-in — but each is independently deployable.
+
+- **Practice Cockpit** — the operating substrate for a single operator's practice: morning briefing at 06:00, glanceable web cockpit, sparring queue derived from today's actual context, and a decision log that carries forward across engagements. Personal first, portable second.
+- **Pocket Polymath** — a personal AI answering assistant. A private curated knowledge hub of roughly ten thousand documents on one side, verified live web search on the other, fused into traceable answers reachable from phone, browser, or programmatic API. Every cited URL is mechanically probed before the answer renders.
+- **CatalyzeAI** — an on-premises platform that turns an SME's document estate into operational intelligence. A staged Scout · Maverick · Skeptic · Synthesizer pipeline with a single Discovery Stance dial for governance. Bundled domain ontologies (ISO 15926-14, IOF Core, CORA, SSN/SOSA) plus customer OWL imports. Built for process, energy, and manufacturing.
+
+Practice Cockpit is built on the AIS-OS framework by Nate Herk for the AI Automation Society community. The Three Ms of AI™ (Mindset, Method, Machine) is a trademark of Nate Herk. The productized cockpit layer — morning-briefing pipeline, two-stage answering chain with mechanical URL verification, dynamic sparring queue, and the deployment substrate — is built and operated by just Results.
+
 ## Contact
 
 - Email: leif.naess@justresults.no
