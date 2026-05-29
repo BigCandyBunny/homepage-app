@@ -143,12 +143,6 @@
     will-change: transform;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .brief-dialog img {
-      filter: invert(0.85) hue-rotate(180deg);
-    }
-  }
-
   .brief-html {
     padding: 3rem 2.5rem;
     max-width: min(92vw, 900px);
