@@ -1,8 +1,17 @@
-# just Results Consulting — homepage
+# justresults.no — homepage
 
-Editorial single-page site for **just Results Consulting a.s** (Leif Næss).
-A Svelte 5 + TypeScript + Vite SPA. Built for both human readers and the
-growing share of visitors who arrive via LLM agents rather than search.
+Source code of [justresults.no](https://justresults.no/), the editorial homepage of **just Results Consulting a.s.** (Leif Næss).
+A Svelte 5 + TypeScript + Vite single-page application — built for human readers and for the growing share of visitors who arrive via LLM agents rather than search.
+
+## About just Results
+
+just Results is an Agentic-AI practice for Norwegian pentahelix clients — startups, SMEs, enterprises, universities and government in process, energy and manufacturing. Three productised systems carry the work:
+
+- **Practice Cockpit** — operating substrate for solo operators and small teams
+- **Pocket Polymath** — personal AI answering assistant with verified live web search
+- **CatalyzeAI** — on-premises innovation engine for process, energy and manufacturing SMEs
+
+Each product has its own overview at [justresults.no](https://justresults.no/).
 
 ## Tech
 
@@ -11,6 +20,7 @@ growing share of visitors who arrive via LLM agents rather than search.
 - **Vitest** + **@testing-library/svelte** under **jsdom**
 - Self-hosted typography: **Fraunces Variable** (display) + **IBM Plex Sans** (body) via `@fontsource`
 - Native `<dialog>` element for the brief/CV lightbox, with `history.pushState`-based iOS back-swipe dismissal
+- Hosted on **Cloudflare Pages**, auto-deployed from `main`
 
 ## Commands
 
@@ -32,7 +42,7 @@ index.html                 # Static <head>: title, meta, CSP, JSON-LD, OG tags
 public/
   llms.txt                 # Plain-markdown summary for LLM crawlers
   robots.txt               # Explicit allow for GPTBot / ClaudeBot / PerplexityBot / …
-  briefs/                  # PNG tech briefs + executive briefs + CV
+  briefs/                  # PNG system overviews + tech stack + CV
 src/
   main.ts                  # Entry — mounts App.svelte, imports fonts + app.css
   App.svelte               # Editorial shell: nav, <main>, hero, sections
@@ -62,10 +72,10 @@ src/
 - Section titles, numerals (I–IV), and input labels use small-caps-style tracking for an editorial register
 
 **Layout**
-- Two-column editorial hero with founder card (monogram placeholder) + positioning copy
-- Projects table as the centerpiece, all rows expandable to reveal tech stack; featured rows also expose Tech Brief + Executive Brief buttons
+- Two-column editorial hero with founder card + positioning copy
+- Projects table as the centerpiece; all rows expandable to reveal tech stack; featured rows also expose a System overview button
 - Contact form uses underline-only fields, no boxes
-- All four sections (`main > section`) fade + rise on initial load with a 100 ms stagger; disabled under `prefers-reduced-motion: reduce`
+- All sections (`main > section`) fade + rise on initial load with a 100 ms stagger; disabled under `prefers-reduced-motion: reduce`
 
 ## Agent-era discoverability
 
@@ -83,9 +93,9 @@ Note: this is a client-rendered SPA. Agents that execute JavaScript read the hyd
 The site is a static SPA with no backend, no database, and no user-generated content. The attack surface is correspondingly small.
 
 **In-code defences**
-- **Content-Security-Policy** via meta tag in `index.html`: `default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'`
+- **Content-Security-Policy** via meta tag in `index.html`: `default-src 'self'; script-src 'self' https://analytics.justresults.no; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss: https://analytics.justresults.no; object-src 'none'; base-uri 'self'; frame-ancestors 'none'`
 - **`referrer-policy: strict-origin-when-cross-origin`** meta tag
-- **No `{@html ...}` anywhere** — Svelte's default auto-escaping covers XSS
+- **No `{@html ...}` of user input** — Svelte's default auto-escaping covers XSS; the one `{@html}` site (markdown rendered from a checked-in file) is build-time content under version control
 - **No LLM calls** from the site → no prompt-injection surface
 
 **Expected from the production host** (set as HTTP headers at the edge)
@@ -95,18 +105,17 @@ The site is a static SPA with no backend, no database, and no user-generated con
 - `X-Frame-Options: DENY` (or equivalent via CSP `frame-ancestors`)
 - `Permissions-Policy` — a conservative default disabling camera/microphone/geolocation
 
-**Open items** (not blockers, tracked for future sessions)
+**Open items**
 - Contact form currently only flips a client-side `submitted` flag. When wired to a real endpoint, add: honeypot field, rate limiting, and Cloudflare Turnstile (or equivalent).
+- `LinkedIn` → add to the `Person` JSON-LD `sameAs` array once the founder profile refresh is published.
 - Run `npm audit` before each release.
-- Founder photo → replace the `LN` monogram placeholder and add `og:image` in `index.html`.
-- LinkedIn / ORCID → add to the `Person` JSON-LD `sameAs` array once the founder profile is ready to expose.
 
 ## Workflow — Strict TDD
 
 This project uses strict test-driven development. For every new feature:
 
 1. **Write a failing test first** — run it to confirm red.
-2. **Iterate on the spec** with the user before touching implementation.
+2. **Iterate on the spec** before touching implementation.
 3. **Implement minimally** — just enough to go green.
 4. **Refactor** while keeping tests green.
 
@@ -115,3 +124,7 @@ Tests live next to source as `*.test.ts`. File-level specs (`src/seo.test.ts`, `
 ## Dev server on the LAN
 
 `vite.config.ts` sets `server.host: true` so the dev server binds to `0.0.0.0` and can be reached from other devices on the LAN (useful for testing on a phone). Default port is 5173; `strictPort: true` prevents silent fallback.
+
+## License
+
+[MIT](LICENSE) — Copyright (c) 2026 Leif Næss / just Results Consulting a.s.
