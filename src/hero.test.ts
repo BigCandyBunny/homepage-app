@@ -17,7 +17,9 @@ describe('Phase 2.4 — Editorial hero with founder block', () => {
     const hero = container.querySelector('#hero')
     const portrait = hero!.querySelector('.portrait')
     expect(portrait).toBeTruthy()
-    expect(portrait!.getAttribute('aria-label')).toMatch(/Leif Næss/)
+    const img = portrait!.querySelector('img')
+    expect(img).toBeTruthy()
+    expect(img!.getAttribute('alt')).toMatch(/Leif Næss/)
   })
 
   it('shows three positioning anchors in the hero (AI focus / mandate length / outcome)', () => {

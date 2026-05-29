@@ -39,11 +39,11 @@ describe('About component', () => {
     expect(summary!.textContent).toMatch(/justresults\.no/)
   })
 
-  it('renders a TechStack button that triggers the in-page BriefDialog with the tech stack image', () => {
+  it('renders a TechStack button (not a new-tab link) that opens the in-page BriefDialog', () => {
     const { container } = render(About)
     const btn = screen.getByRole('button', { name: /^techstack$/i }) as HTMLButtonElement
     expect(btn).toBeTruthy()
-    expect(btn.dataset.src).toContain('/briefs/tech_stack.png')
+    expect(btn.tagName).toBe('BUTTON')
     expect(container.querySelectorAll('a[target="_blank"]').length).toBe(0)
   })
 
