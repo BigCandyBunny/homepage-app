@@ -10,6 +10,7 @@
     'Practice Cockpit': 'practice_cockpit_system',
     'Pocket Polymath': 'pocket_polymath_system',
     'CatalyzeAI': 'catalyze_ai_system',
+    'Trusted Operational AI': 'trusted_operational_ai_system',
   }
 
   let { projects }: Props = $props()

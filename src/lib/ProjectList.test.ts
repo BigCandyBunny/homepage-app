@@ -213,3 +213,27 @@ describe('ProjectList component', () => {
     })
   })
 })
+
+describe('Trusted Operational AI featured brief', () => {
+  const toaProject = {
+    title: 'Trusted Operational AI',
+    businessImpact: 'Turns failure prediction into audited, human-gated action',
+    audience: 'Energy, oil & gas, and offshore-wind operators',
+    description: 'Demonstrator in which a predictive-maintenance agent acts on two industrial assets.',
+    techStack: {
+      languages: ['Python'],
+      databases: ['Industrial sensor & SCADA time-series'],
+      visualization: ['Three audience views'],
+      agenticBehaviour: 'Perceive -> reason -> act -> record under a staged autonomy ladder',
+      clientPreparations: 'Labelled asset history or synthetic fixtures; declared regulatory scope',
+    },
+  }
+
+  it('carries the trusted_operational_ai_system PNG path when expanded', async () => {
+    const { container } = render(ProjectList, { props: { projects: [toaProject] } })
+    const row = container.querySelector('tbody tr:first-child') as HTMLElement
+    await fireEvent.click(row)
+    const btn = screen.getByRole('button', { name: /system overview/i }) as HTMLButtonElement
+    expect(btn.dataset.src).toContain('/briefs/trusted_operational_ai_system.png')
+  })
+})

@@ -52,4 +52,17 @@ export const projects: Project[] = [
       clientPreparations: 'Repository-owner role, 3–5 benchmark prompts, on-premises hardware; bundled ontologies — ISO 15926-14, IOF Core, CORA, SSN/SOSA; customer OWL imports supported.',
     },
   },
+  {
+    title: 'Trusted Operational AI',
+    businessImpact: 'Turns failure prediction into audited, human-gated action — predictive maintenance an operator can defend to safety, audit, and the board',
+    audience: 'Energy, oil & gas, and offshore-wind operators acting under EU AI Act, NIS2, and IEC 62443 obligations',
+    description: 'Demonstrator in which a predictive-maintenance agent acts on two industrial assets — an oil-and-gas well and an offshore-wind energy system — with every prediction calibrated, explained, drift-checked, human-gated, and written to a tamper-evident audit trail.',
+    techStack: {
+      languages: ['Python'],
+      databases: ['Industrial sensor & SCADA time-series', 'Append-only hash-chained audit log'],
+      visualization: ['Three audience views — Engineer · Domain expert · Decision-maker', 'Plotly: sensor stream · power curve · reliability · drift · autonomy-gate timeline · battery/grid dispatch'],
+      agenticBehaviour: 'Perceive → reason → act → record, gated by a staged autonomy ladder (Observe → Recommend → Approve → Auto-bounded → Auto) with confidence/severity/cost/reversibility guardrails and a drift fail-safe; in the wind case the failure risk steers battery and grid-export dispatch.',
+      clientPreparations: 'Labelled asset history (or run on synthetic fixtures); a declared regulatory scope; on-premises deployment available.',
+    },
+  },
 ]
