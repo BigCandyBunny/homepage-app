@@ -237,3 +237,27 @@ describe('Trusted Operational AI featured brief', () => {
     expect(btn.dataset.src).toContain('/briefs/trusted_operational_ai_system.png')
   })
 })
+
+describe('Guardrails for Agentic AI featured brief', () => {
+  const guardrailsProject = {
+    title: 'Guardrails for Agentic AI',
+    businessImpact: 'The difference between autonomy you can deploy and autonomy that is a liability',
+    audience: 'Boards and operators deploying agentic AI in regulated, safety-critical settings',
+    description: 'Standalone demonstrator in which an autonomous agent gets caught, clamped, blocked, and overruled on real Norwegian grid data.',
+    techStack: {
+      languages: ['Python', 'TypeScript'],
+      databases: ['Real ENTSO-E NO1 load data', 'Tamper-evident audit trail'],
+      visualization: ['One browser screen', 'Live-editable guardrails'],
+      agenticBehaviour: 'Propose -> pass / clamp / block / escalate under a deterministic, no-ML guardrail layer',
+      clientPreparations: 'One docker compose up, no internet needed; reports illustrative, not certified',
+    },
+  }
+
+  it('carries the guardrails_for_agentic_ai_playbook PNG path when expanded', async () => {
+    const { container } = render(ProjectList, { props: { projects: [guardrailsProject] } })
+    const row = container.querySelector('tbody tr:first-child') as HTMLElement
+    await fireEvent.click(row)
+    const btn = screen.getByRole('button', { name: /system overview/i }) as HTMLButtonElement
+    expect(btn.dataset.src).toContain('/briefs/guardrails_for_agentic_ai_playbook.png')
+  })
+})

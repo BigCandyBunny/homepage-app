@@ -65,4 +65,17 @@ export const projects: Project[] = [
       clientPreparations: 'Labelled asset history (or run on synthetic fixtures); a declared regulatory scope; on-premises deployment available.',
     },
   },
+  {
+    title: 'Guardrails for Agentic AI',
+    businessImpact: 'The difference between autonomy you can deploy and autonomy that is a liability — guardrails turn a board-level worry about agentic AI into something you can click',
+    audience: 'Boards, operators, and regulators weighing whether to let agentic AI act in regulated, safety-critical systems — energy is the worked example, the principle transfers',
+    description: 'Standalone demonstrator — one docker compose up, one browser tab, no internet — running a miniature Norwegian electricity provider in which a deliberately over-reaching AI agent gets caught, clamped, blocked, and overruled on real grid data while a human stays in command.',
+    techStack: {
+      languages: ['Python', 'TypeScript'],
+      databases: ['Real ENTSO-E load data for bidding zone NO1', 'Tamper-evident, append-only audit trail'],
+      visualization: ['One browser screen — proposal → guardrail verdict → outcome', 'Live-editable guardrails: change a threshold, watch the outcome change', 'Two regulator-shaped incident reports (NVE/RME + REMIT, EU AI Act)'],
+      agenticBehaviour: 'A deliberately imperfect agent proposes grid-balancing actions; a deterministic guardrail layer — plain, auditable code with no machine learning — intercepts every proposal to pass, clamp, block, or escalate, behind an operator kill-switch and a monitored path back to autonomy.',
+      clientPreparations: 'Runs fully offline on bundled real data; not a production controller — no real assets move and the incident reports are illustrative, not certified filings.',
+    },
+  },
 ]

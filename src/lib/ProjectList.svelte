@@ -11,6 +11,7 @@
     'Pocket Polymath': 'pocket_polymath_system',
     'CatalyzeAI': 'catalyze_ai_system',
     'Trusted Operational AI': 'trusted_operational_ai_system',
+    'Guardrails for Agentic AI': 'guardrails_for_agentic_ai_playbook',
   }
 
   let { projects }: Props = $props()
