@@ -46,7 +46,7 @@
 
         <div class="hero-copy">
           <p class="eyebrow">Agentic AI for process, energy &amp; manufacturing</p>
-          <h1 id="hero-heading">Decades of bridging boards and shop floors — full-time on Agentic AI since November 30, 2022.</h1>
+          <h1 id="hero-heading">Agentic AI that regulators trust and operators can defend.</h1>
           <p class="positioning">
             Eight-to-twenty-week mandates that leave your team able to make
             the next decision without us. Strategy, change, and Agentic AI
@@ -56,7 +56,7 @@
           <dl class="stats">
             <div class="stat">
               <dt>AI focus</dt>
-              <dd>Full-time since 30 Nov 2022</dd>
+              <dd>AI tools &amp; Agentic AI in organizations</dd>
             </div>
             <div class="stat">
               <dt>Mandate length</dt>

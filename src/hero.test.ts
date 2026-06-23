@@ -26,7 +26,6 @@ describe('Phase 2.4 — Editorial hero with founder block', () => {
     const { container } = render(App)
     const hero = container.querySelector('#hero')!
     const text = hero.textContent ?? ''
-    expect(text).toMatch(/(30\s*Nov|November\s*30).*2022/i)
     expect(text).toMatch(/8.{1,3}20\s*weeks/i)
     expect(text).toMatch(/team\s+decides?\s+without\s+us/i)
   })
