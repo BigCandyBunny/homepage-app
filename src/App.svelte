@@ -56,7 +56,7 @@
           <dl class="stats">
             <div class="stat">
               <dt>AI focus</dt>
-              <dd>AI tools &amp; Agentic AI in organizations</dd>
+              <dd>AI tools, Agentic AI, and innovations</dd>
             </div>
             <div class="stat">
               <dt>Mandate length</dt>
