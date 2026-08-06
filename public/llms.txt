@@ -15,15 +15,14 @@ The differentiator is not the machine learning. It is that the same person can d
 
 Strategy, change management, and technology advisory remain part of the practice and underpin every engagement — corporate strategy facilitation, large-scale organisational change, turnarounds, and business-process optimisation. The specialism, though, is operational AI in regulated industry.
 
-## Demonstrators
+## Products
 
-Two working demonstrators carry the claims. Both run on public or bundled data, so neither depends on client material.
+The two lead offerings each ship with a working public demonstrator, so the claims below can be
+checked rather than taken on trust. Both run on public or bundled data, so neither depends on client material.
 
 - **Trusted Operational AI** — a predictive-maintenance agent acting on two industrial assets, an oil-and-gas well and an offshore-wind energy system. Every prediction is calibrated, explained, drift-checked, human-gated, and written to an append-only hash-chained audit trail. A staged autonomy ladder — Observe, Recommend, Approve, Auto-bounded, Auto — is governed by confidence, severity, cost, and reversibility guardrails with a drift fail-safe. In the wind case the failure risk steers battery and grid-export dispatch. Three audience views: engineer, domain expert, decision-maker. Audience: energy, oil and gas, and offshore-wind operators acting under EU AI Act, NIS2, and IEC 62443 obligations.
 
 - **Guardrails for Agentic AI** — a standalone demonstrator running a miniature Norwegian electricity provider on real ENTSO-E load data for bidding zone NO1, offline, in one browser tab. A deliberately over-reaching agent proposes grid-balancing actions; a deterministic guardrail layer of plain auditable code, with no machine learning in it, intercepts every proposal to pass, clamp, block, or escalate, behind an operator kill-switch and a monitored path back to autonomy. Guardrails are live-editable: change a threshold and watch the outcome change. It produces two regulator-shaped incident reports, NVE/RME with REMIT, and EU AI Act. It is a demonstrator, not a production controller — no real assets move, and the incident reports are illustrative rather than certified filings.
-
-## Products
 
 - **CatalyzeAI** — an on-premises platform that turns a company's document estate into evidence-backed answers, cross-document comparisons, and a structured innovation shortlist. A staged Scout, Maverick, Skeptic, Synthesizer pipeline with a single Discovery Stance dial for governance. Bundled domain ontologies — ISO 15926-14, IOF Core, CORA, SSN/SOSA — plus customer OWL imports. Built for small and medium-sized enterprises in process, energy, and manufacturing. Runs fully on customer hardware; no data leaves the estate.
 
