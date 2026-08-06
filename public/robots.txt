@@ -1,6 +1,14 @@
 # just Results Consulting — robots policy
 # This site is a public professional profile and welcomes indexing by
 # both traditional search engines and LLM-based agents.
+#
+# A plain-text summary for LLM agents is served at /llms.txt
+#
+# NOTE: crawler access is also enforced at the Cloudflare edge, which is
+# authoritative. If the edge blocks a crawler, an Allow here has no effect.
+# No Sitemap: directive yet — the site is a single-page app with no real
+# sitemap.xml, and pointing crawlers at a 200-returning SPA shell is worse
+# than omitting the line.
 
 User-agent: *
 Allow: /
