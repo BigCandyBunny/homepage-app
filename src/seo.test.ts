@@ -129,6 +129,27 @@ describe('Phase 5.1 — SEO & agent-discovery metadata', () => {
       expect(txt).toMatch(/leif\.naess@justresults\.no/)
       expect(txt).toMatch(/justresults\.no/)
     })
+
+    // Regression guard: llms.txt drifted out of sync with projects.ts and for a
+    // time named only the internal tools, omitting the spearhead entirely. It is
+    // the file AI agents read, so it must carry the products we lead with.
+    it('names the products we lead with', () => {
+      for (const product of [
+        'Trusted Operational AI',
+        'Guardrails',
+        'CatalyzeAI',
+      ]) {
+        expect(txt, `llms.txt missing ${product}`).toMatch(
+          new RegExp(product, 'i'),
+        )
+      }
+    })
+
+    it('carries the regulatory anchors the demonstrators are built around', () => {
+      for (const anchor of ['EU AI Act', 'NIS2', 'IEC 62443']) {
+        expect(txt, `llms.txt missing ${anchor}`).toMatch(new RegExp(anchor, 'i'))
+      }
+    })
   })
 
   describe('public/robots.txt', () => {
