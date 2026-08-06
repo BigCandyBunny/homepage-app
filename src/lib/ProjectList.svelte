@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Project } from './data/projects'
-  import { openBrief, preloadBrief } from './briefDialog.svelte'
+  import { openBrief, preloadBrief } from './briefStore.svelte'
 
   interface Props {
     projects: Project[]

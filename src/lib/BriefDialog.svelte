@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { briefState, closeBrief } from './briefDialog.svelte'
+  import { briefState, closeBrief } from './briefStore.svelte'
 
   let dialogEl: HTMLDialogElement | undefined = $state()
   let pushedHistory = false

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { openBrief, openBriefHtml, preloadBrief } from './briefDialog.svelte'
+  import { openBrief, openBriefHtml, preloadBrief } from './briefStore.svelte'
   import { renderMarkdown } from './renderMarkdown'
   import cvMarkdown from './cv_onepager.md?raw'
   import aboutMarkdown from '../../public/llms.txt?raw'
