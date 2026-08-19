@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tighter than index.html's policy: this page needs no script, no image
+         and no font, so nothing is granted. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'none'; style-src 'unsafe-inline'; img-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>404 — Page not found · just Results Consulting</title>
+
+    <!-- Deliberately no stylesheet, no font and no analytics beacon. Cloudflare
+         Pages serves this for every unmatched path, which in practice means
+         scanners far more often than people; it must cost one request. The
+         tokens below are copies of the ones in src/app.css, with system-font
+         fallbacks in place of the bundled faces. -->
+    <style>
+      :root {
+        --bg: #1e2a4a;
+        --text: #d4c5a0;
+        --text-h: #f0e6c8;
+        --accent: #e8d5a3;
+        --border: rgba(228, 213, 163, 0.12);
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f5f2eb;
+          --text: #3a3525;
+          --text-h: #2a3a6e;
+          --accent: #2a3a6e;
+          --border: rgba(42, 58, 110, 0.15);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        background: var(--bg);
+        color: var(--text);
+        font: 18px/145% ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: 0.18px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        max-width: 34rem;
+      }
+
+      .code {
+        font: 400 0.85rem/1 ui-monospace, Consolas, monospace;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 1.25rem;
+      }
+
+      h1 {
+        font: 400 clamp(2rem, 6vw, 3rem) / 1.1 Georgia, 'Times New Roman', serif;
+        color: var(--text-h);
+        margin: 0 0 1rem;
+      }
+
+      p {
+        margin: 0 0 2rem;
+      }
+
+      a {
+        display: inline-block;
+        padding: 0.7rem 1.4rem;
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-color: var(--accent);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p class="code">Error 404</p>
+      <h1>That page does not exist.</h1>
+      <p>
+        The site is a single page — there is nothing else at this address. The
+        link that brought you here was wrong, or it has been retired.
+      </p>
+      <a href="/">Return to just Results Consulting</a>
+    </main>
+  </body>
+</html>
