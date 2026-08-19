@@ -97,6 +97,7 @@ The site is a static SPA with no backend, no database, and no user-generated con
 - **`referrer-policy: strict-origin-when-cross-origin`** meta tag
 - **No `{@html ...}` of user input** — Svelte's default auto-escaping covers XSS; the one `{@html}` site (markdown rendered from a checked-in file) is build-time content under version control
 - **No LLM calls** from the site → no prompt-injection surface
+- **`public/404.html`** — Cloudflare Pages serves `index.html` with HTTP 200 for every unmatched path when the build output has no `404.html`, so `/wp-login.php`, `/.env` and `/.git/config` all answered 200 with the full app shell and a scanner never learned a path was invalid. The page ships a real 404. It is served to scanners far more often than to people, so it loads no stylesheet, font, bundle or analytics beacon — one request, and bot probes stay out of Plausible. Enforced by `src/notfound.test.ts`.
 
 **Expected from the production host** (set as HTTP headers at the edge)
 - `Content-Security-Policy` — same policy as above, plus `upgrade-insecure-requests`
