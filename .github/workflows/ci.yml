@@ -1,10 +1,15 @@
 name: CI
 
 on:
+  # Every branch, not just main. Pull requests are unavailable on this repo --
+  # the API 404s on /pulls for anyone, authenticated or not -- so a branch push
+  # is the only way a commit can earn the "Type-check, test, build" status that
+  # main's protection requires before it will accept the push.
   push:
-    branches: [main]
+    branches: ['**']
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   check:
