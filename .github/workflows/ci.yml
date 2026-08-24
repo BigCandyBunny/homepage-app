@@ -1,10 +1,17 @@
+# CI — homepage-app.
+#
+# The gate is `npm run check`, and the `guard.py ci` pre-push hook runs the same
+# command via [ci] gate in .claude/guard.toml. One list, two callers.
 name: CI
 
 on:
   # Every branch, not just main. Pull requests are unavailable on this repo --
   # the API 404s on /pulls for anyone, authenticated or not -- so a branch push
-  # is the only way a commit can earn the "Type-check, test, build" status that
-  # main's protection requires before it will accept the push.
+  # is the only way a commit can earn the "Gate" status that main's protection
+  # requires before it will accept the push. (That context was named
+  # "Type-check, test, build" until 2026-08-24, when the three hand-listed steps
+  # became one; renaming a job renames the required check, so protection was
+  # re-pointed in the same change.)
   push:
     branches: ['**']
   pull_request:
@@ -12,8 +19,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
-    name: Type-check, test, build
+  gate:
+    name: Gate
     runs-on: ubuntu-latest
 
     steps:
@@ -30,11 +37,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Type-check
+      # The gate. One command, the same one the pre-push hook runs. It is
+      # `npm run typecheck && npm run test && npm run build` -- three steps that
+      # used to be listed here by hand, where they could drift from what anyone
+      # ran locally. A step here that `npm run check` does not do has forked the
+      # gate; fix the script.
+      - name: Gate
         run: npm run check
-
-      - name: Test
-        run: npm run test
-
-      - name: Build
-        run: npm run build
