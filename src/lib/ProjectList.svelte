@@ -12,6 +12,7 @@
     'CatalyzeAI': 'catalyze_ai_system',
     'Trusted Operational AI': 'trusted_operational_ai_system',
     'Guardrails for Agentic AI': 'guardrails_for_agentic_ai_playbook',
+    'Safe Agentic AI for Nordic Enterprise': 'safe_ai_for_nordic_enterprise',
   }
 
   let { projects }: Props = $props()
