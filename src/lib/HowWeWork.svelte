@@ -11,8 +11,39 @@
     on-prem hardware in our office.
   </p>
 
+  <figure class="statement">
+    <blockquote>
+      <p>
+        I run Claude Code the way I would run an engineering team, not a chat
+        window. I hand it complete missions rather than instructions: adopt a VM
+        into the estate, fix the template it was cloned from, write the
+        provisioning script, test it, document it, open the pull request and
+        merge it. It works for hours across my Proxmox fleet, Ansible plays and
+        OpenTofu state while I audit the summaries and step in only where a
+        number or a diagnosis looks wrong.
+      </p>
+      <p>
+        For large jobs, such as enriching several hundred Norwegian company
+        records from web sources, I fan the work out across dozens of parallel
+        agents and reconcile their output against the files on disk instead of
+        trusting a running tally. Every rule I have learned the hard way is
+        written into house standards that load on every session: verification
+        before assertion, stdlib-only recovery scripts, one gate command shared
+        by CI and the pre-push hook, and a fresh-context adversarial review
+        before risky code ships. Most of the work ships end to end, from root
+        cause to fleet-wide deploy and runbook.
+      </p>
+      <p>
+        What I bring is 40 years of process and manufacturing engineering
+        judgment; what Claude Code brings is the capacity to act on it at a
+        scale one person could not otherwise reach.
+      </p>
+    </blockquote>
+    <figcaption>— Leif Næss</figcaption>
+  </figure>
+
   <p class="stack-line">
-    HPE ML350 · Coolify · Plausible analytics · OPNsense · Cloudflare Tunnel
+    HPE ML350 · Proxmox · Ansible · OpenTofu · Coolify · Plausible analytics · OPNsense · Cloudflare Tunnel
   </p>
 
   <p class="credits">
@@ -42,6 +73,27 @@
     line-height: 1.7;
     max-width: 62ch;
     margin: 0 0 1.25rem;
+  }
+
+  .statement {
+    margin: 0 0 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--accent);
+    max-width: 62ch;
+  }
+
+  .statement blockquote {
+    margin: 0;
+  }
+
+  .statement p {
+    line-height: 1.7;
+    margin: 0 0 0.9rem;
+  }
+
+  .statement figcaption {
+    font-family: var(--serif-display);
+    color: var(--accent);
   }
 
   .stack-line {
