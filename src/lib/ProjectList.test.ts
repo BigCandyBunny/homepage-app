@@ -238,6 +238,30 @@ describe('Trusted Operational AI featured brief', () => {
   })
 })
 
+describe('Safe Agentic AI for Nordic Enterprise featured brief', () => {
+  const agenticSuiteProject = {
+    title: 'Safe Agentic AI for Nordic Enterprise',
+    businessImpact: 'Five working agentic demos on one shared chassis',
+    audience: 'Nordic SME/enterprise decision makers',
+    description: 'One chassis, five proofs. The agent proposes; a human dispatches.',
+    techStack: {
+      languages: ['Python', 'TypeScript'],
+      databases: ['Postgres + pgvector'],
+      visualization: ['Vue 3 UI: HITL approval gate'],
+      agenticBehaviour: 'Direct Claude API loop, every step Pydantic-validated',
+      clientPreparations: 'Synthetic Nordic data, deterministic seed',
+    },
+  }
+
+  it('carries the safe_ai_for_nordic_enterprise PNG path when expanded', async () => {
+    const { container } = render(ProjectList, { props: { projects: [agenticSuiteProject] } })
+    const row = container.querySelector('tbody tr:first-child') as HTMLElement
+    await fireEvent.click(row)
+    const btn = screen.getByRole('button', { name: /system overview/i }) as HTMLButtonElement
+    expect(btn.dataset.src).toContain('/briefs/safe_ai_for_nordic_enterprise.png')
+  })
+})
+
 describe('Guardrails for Agentic AI featured brief', () => {
   const guardrailsProject = {
     title: 'Guardrails for Agentic AI',

@@ -135,6 +135,7 @@ describe('Phase 5.1 — SEO & agent-discovery metadata', () => {
     // the file AI agents read, so it must carry the products we lead with.
     it('names the products we lead with', () => {
       for (const product of [
+        'Safe Agentic AI for Nordic Enterprise',
         'Trusted Operational AI',
         'Guardrails',
         'CatalyzeAI',

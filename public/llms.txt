@@ -8,6 +8,7 @@ The differentiator is not the machine learning. It is that the same person can d
 
 ## What we build
 
+- **Human-gated agentic workflows for enterprise operations** — agents that draft maintenance plans, procurement positions, strategy stress-tests, compliance statements, and knowledge summaries; the agent proposes, a human dispatches, and no external side-effect happens without an approve action.
 - **Predictive maintenance an operator can defend** — failure prediction wired to audited, human-gated action rather than to a dashboard nobody opens.
 - **Guardrails for agentic AI** — deterministic clamp, block, and escalate layers that keep an autonomous agent inside limits a regulator will accept.
 - **Conformity evidence for industrial ML** — calibration, conformal intervals, drift monitoring, and tamper-evident audit trails mapped to EU AI Act, NIS2, and IEC 62443 obligations.
@@ -17,8 +18,10 @@ Strategy, change management, and technology advisory remain part of the practice
 
 ## Products
 
-The two lead offerings each ship with a working public demonstrator, so the claims below can be
-checked rather than taken on trust. Both run on public or bundled data, so neither depends on client material.
+The lead offerings ship with working demonstrators, so the claims below can be checked rather
+than taken on trust. The demonstrators run on synthetic, public, or bundled data, so none depends on client material.
+
+- **Safe Agentic AI for Nordic Enterprise** — a suite of five working agentic demo applications on one shared chassis, each proving one agentic pattern and mapping to a fixed-scope engagement: shadow maintenance planning, procurement negotiation drafting, strategy stress-testing, Åpenhetsloven (Norwegian Transparency Act) due-diligence mapping, and retiring-operator knowledge capture. The agent proposes; a human dispatches — every external action sits behind a human approve gate, and every draft shows its provenance in the UI: which data, which retrieved chunks, which prompt produced it. Direct Claude API agent loop with every step schema-validated, deterministic gates the prompt cannot bypass, and a Trust Horizon pilot posture — shadow, then recommend, then guardrailed autonomy earned against a measured accuracy record. Runs on deterministic synthetic Nordic data; drafts, never sends. Audience: Nordic SME and enterprise decision makers — plant directors, procurement, compliance, and operations.
 
 - **Trusted Operational AI** — a predictive-maintenance agent acting on two industrial assets, an oil-and-gas well and an offshore-wind energy system. Every prediction is calibrated, explained, drift-checked, human-gated, and written to an append-only hash-chained audit trail. A staged autonomy ladder — Observe, Recommend, Approve, Auto-bounded, Auto — is governed by confidence, severity, cost, and reversibility guardrails with a drift fail-safe. In the wind case the failure risk steers battery and grid-export dispatch. Three audience views: engineer, domain expert, decision-maker. Audience: energy, oil and gas, and offshore-wind operators acting under EU AI Act, NIS2, and IEC 62443 obligations.
 

@@ -1,0 +1,7 @@
+# Pre-push guard. See ~/.claude/house/ci.md.
+#
+# The gate below is the SAME command .github/workflows/ci.yml runs. Until
+# 2026-08-24 `npm run check` was the type-check alone while CI ran three steps,
+# so there was no one command a human could run that matched CI.
+[ci]
+gate = "npm run check"

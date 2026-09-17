@@ -28,7 +28,8 @@ Each product has its own overview at [justresults.no](https://justresults.no/).
 npm run dev          # Vite dev server with HMR (bound to 0.0.0.0 for LAN access)
 npm run build        # Production build → dist/
 npm run preview      # Serve the production build locally
-npm run check        # svelte-check + tsc
+npm run check        # THE gate: typecheck + test + build (what CI runs)
+npm run typecheck    # svelte-check + tsc
 npm run test         # vitest run
 npm run test:watch   # vitest watch
 ```
