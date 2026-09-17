@@ -4,4 +4,4 @@
 # 2026-08-24 `npm run check` was the type-check alone while CI ran three steps,
 # so there was no one command a human could run that matched CI.
 [ci]
-gate = "npm run check"
+gate = "bash -c '. \"$HOME/.nvm/nvm.sh\" 2>/dev/null; npm run check'"
