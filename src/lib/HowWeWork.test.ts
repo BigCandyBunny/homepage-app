@@ -3,13 +3,17 @@ import { render } from '@testing-library/svelte'
 import HowWeWork from './HowWeWork.svelte'
 
 describe('HowWeWork component', () => {
-  it('carries the signed Claude Code operating statement', () => {
+  it('carries the signed Claude Code operating statement, pruned to its closing claim', () => {
     const { container } = render(HowWeWork)
     const statement = container.querySelector('figure.statement')
     expect(statement).toBeTruthy()
-    expect(statement!.querySelector('blockquote')!.textContent).toMatch(
-      /I run Claude Code the way I would run an engineering team/,
+    const quote = statement!.querySelector('blockquote')!
+    expect(quote.textContent).toMatch(
+      /What I bring is decades of process and manufacturing engineering\s+judgment/,
     )
+    // The operating narrative now lives in the TechStack brief, not here.
+    expect(quote.querySelectorAll('p').length).toBe(1)
+    expect(quote.textContent).not.toMatch(/I run Claude Code the way I would run an engineering team/)
     expect(statement!.querySelector('figcaption')!.textContent).toMatch(/Leif Næss/)
   })
 

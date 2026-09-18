@@ -51,8 +51,9 @@ src/
   lib/
     ProjectList.svelte     # Expandable project table (centerpiece)
     ContactForm.svelte     # Underlined editorial fields + "how we work" lead-in
-    About.svelte           # Firm description + CV button
-    BriefDialog.svelte     # Native <dialog> lightbox for brief PNGs
+    About.svelte           # Firm description + TechStack and CV buttons
+    techstack.md           # Claude Code operating narrative, shown above the TechStack image
+    BriefDialog.svelte     # Native <dialog> lightbox for brief PNGs, with optional intro copy
     briefDialog.svelte.ts  # Shared state + preload helper
     data/projects.ts       # Project data
   *.test.ts                # Vitest specs live alongside the code they test

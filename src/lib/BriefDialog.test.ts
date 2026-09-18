@@ -107,6 +107,20 @@ describe('Phase 4.8a — About TechStack and CV use the same BriefDialog', () =>
     expect(img.src).toContain('/briefs/tech_stack')
   })
 
+  it('the TechStack brief shows a TECHSTACK heading and the narrative above the image', async () => {
+    const { container } = render(App)
+    const btn = screen.getByRole('button', { name: /^techstack$/i })
+    await fireEvent.click(btn)
+    const dialog = container.querySelector('dialog.brief-dialog') as HTMLDialogElement
+    const intro = dialog.querySelector('.brief-intro') as HTMLElement
+    expect(intro).toBeTruthy()
+    expect(intro.querySelector('h2')!.textContent).toMatch(/^TECHSTACK$/i)
+    expect(intro.textContent).toMatch(/run Claude Code the way I would run an engineering team/)
+    const img = dialog.querySelector('img') as HTMLImageElement
+    // The narrative must precede the image in document order.
+    expect(intro.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
   it('clicking the CV button opens the BriefDialog with CV markdown rendered as HTML', async () => {
     const { container } = render(App)
     const btn = screen.getByRole('button', { name: /^cv$/i })
