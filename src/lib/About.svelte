@@ -2,6 +2,7 @@
   import { openBrief, openBriefHtml, preloadBrief } from './briefStore.svelte'
   import { renderMarkdown } from './renderMarkdown'
   import cvMarkdown from './cv_onepager.md?raw'
+  import techStackMarkdown from './techstack.md?raw'
   import aboutMarkdown from '../../public/llms.txt?raw'
 
   const cvHtml = renderMarkdown(cvMarkdown)
@@ -11,6 +12,7 @@
     aboutMarkdown.replace(/^#\s.*\n+/, '').replace(/^## /gm, '### '),
   )
   const techStackSrc = '/briefs/tech_stack_light.png'
+  const techStackIntro = renderMarkdown(`## TechStack\n\n${techStackMarkdown}`)
 </script>
 
 <section id="about" aria-labelledby="about-heading">
@@ -23,7 +25,7 @@
         type="button"
         onpointerenter={() => preloadBrief(techStackSrc)}
         onfocus={() => preloadBrief(techStackSrc)}
-        onclick={(e) => openBrief(techStackSrc, 'TechStack', e.currentTarget)}
+        onclick={(e) => openBrief(techStackSrc, 'TechStack', e.currentTarget, techStackIntro)}
       >TechStack</button>
       <button
         type="button"

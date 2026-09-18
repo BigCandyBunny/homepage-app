@@ -93,6 +93,9 @@
     {#if briefState.html}
       <div class="brief-html">{@html briefState.html}</div>
     {:else}
+      {#if briefState.intro}
+        <div class="brief-intro">{@html briefState.intro}</div>
+      {/if}
       <img
         src={briefState.src}
         alt={briefState.alt}
@@ -118,7 +121,7 @@
     max-width: 100vw;
     height: 100vh;
     max-height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
     box-shadow: none;
   }
 
@@ -141,6 +144,26 @@
     margin: 0 auto;
     transition: transform 0.08s ease-out;
     will-change: transform;
+  }
+
+  .brief-intro {
+    padding: 2.5rem 2.5rem 0;
+    max-width: min(92vw, 900px);
+    font-family: var(--sans);
+    line-height: 1.7;
+  }
+
+  .brief-intro :global(h2) {
+    font-family: var(--serif-display);
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+
+  .brief-intro :global(p) {
+    margin: 0 0 0.9rem;
   }
 
   .brief-html {

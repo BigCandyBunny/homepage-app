@@ -109,9 +109,15 @@
 
 <style>
   #contact {
-    max-width: 600px;
+    /* 800px matches #how-we-work and #about so all three share a left edge. */
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem var(--section-gutter);
+  }
+
+  form,
+  .success-message {
+    max-width: 600px;
   }
 
   h2 {

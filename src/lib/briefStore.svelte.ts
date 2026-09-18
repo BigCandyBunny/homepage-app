@@ -3,6 +3,7 @@ interface BriefState {
   src: string
   alt: string
   html: string
+  intro: string
   trigger: HTMLElement | null
 }
 
@@ -11,13 +12,20 @@ export const briefState = $state<BriefState>({
   src: '',
   alt: '',
   html: '',
+  intro: '',
   trigger: null,
 })
 
-export function openBrief(src: string, alt: string, trigger?: HTMLElement | null) {
+export function openBrief(
+  src: string,
+  alt: string,
+  trigger?: HTMLElement | null,
+  intro = '',
+) {
   briefState.src = src
   briefState.alt = alt
   briefState.html = ''
+  briefState.intro = intro
   briefState.trigger = trigger ?? (document.activeElement as HTMLElement | null)
   briefState.open = true
 }
@@ -26,6 +34,7 @@ export function openBriefHtml(html: string, alt: string, trigger?: HTMLElement |
   briefState.src = ''
   briefState.alt = alt
   briefState.html = html
+  briefState.intro = ''
   briefState.trigger = trigger ?? (document.activeElement as HTMLElement | null)
   briefState.open = true
 }

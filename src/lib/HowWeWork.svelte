@@ -14,27 +14,7 @@
   <figure class="statement">
     <blockquote>
       <p>
-        I run Claude Code the way I would run an engineering team, not a chat
-        window. I hand it complete missions rather than instructions: adopt a VM
-        into the estate, fix the template it was cloned from, write the
-        provisioning script, test it, document it, open the pull request and
-        merge it. It works for hours across my Proxmox fleet, Ansible plays and
-        OpenTofu state while I audit the summaries and step in only where a
-        number or a diagnosis looks wrong.
-      </p>
-      <p>
-        For large jobs, such as enriching several hundred Norwegian company
-        records from web sources, I fan the work out across dozens of parallel
-        agents and reconcile their output against the files on disk instead of
-        trusting a running tally. Every rule I have learned the hard way is
-        written into house standards that load on every session: verification
-        before assertion, stdlib-only recovery scripts, one gate command shared
-        by CI and the pre-push hook, and a fresh-context adversarial review
-        before risky code ships. Most of the work ships end to end, from root
-        cause to fleet-wide deploy and runbook.
-      </p>
-      <p>
-        What I bring is 40 years of process and manufacturing engineering
+        What I bring is decades of process and manufacturing engineering
         judgment; what Claude Code brings is the capacity to act on it at a
         scale one person could not otherwise reach.
       </p>
