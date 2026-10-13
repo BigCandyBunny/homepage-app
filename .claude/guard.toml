@@ -5,3 +5,26 @@
 # so there was no one command a human could run that matched CI.
 [ci]
 gate = "bash -c '. \"$HOME/.nvm/nvm.sh\" 2>/dev/null; npm run check'"
+
+# The rest of the declaration, added 2026-10-13. Since that day guard.py refuses
+# a guard.toml that leaves a section out: a missing section switched its hook
+# off silently, and this file had been [ci]-only. See ~/.claude/house/enforcement.md.
+
+[spec]
+# A behaviour-changing commit needs a sprint that is `Status: active` and whose
+# Decisions & learnings log was updated this session. No sprint exists yet:
+# create one with /sprint new and promote it before the first source edit.
+# posts/ and public/ are content and static assets.
+dir = "specs"
+# What changes NO behaviour, never a list of what counts as code.
+exempt = ["*.md", "specs/*", "tests/*", "test_*.py", "*_test.py", ".claude/*", ".gitignore", "posts/*", "public/*"]
+
+[review]
+# `git push` carrying any of these needs a FINISHED adversary review this
+# session. The site is public and deploys from main on merge.
+paths = ["src/*"]
+agents = ["adversary"]
+
+[off]
+# A section this repo does without, and why. Delete the line to opt back in.
+tdd = "no Python: the tdd hook guards .py only. The TypeScript tests run in the gate (npm run check)"
