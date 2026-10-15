@@ -42,5 +42,9 @@ jobs:
       # used to be listed here by hand, where they could drift from what anyone
       # ran locally. A step here that `npm run check` does not do has forked the
       # gate; fix the script.
+      #
+      # Character for character the [ci] gate in .claude/guard.toml. The nvm
+      # loader is for hosts where npm comes from nvm; here there is no nvm.sh,
+      # so it is a no-op and the exit status is npm run check's.
       - name: Gate
-        run: npm run check
+        run: bash -c '. "$HOME/.nvm/nvm.sh" 2>/dev/null; npm run check'
