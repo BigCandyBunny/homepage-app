@@ -1,6 +1,6 @@
 # Sprint 001 — CI Gate String
 
-Status: active   Updated: 2026-10-15
+Status: done   Updated: 2026-10-15
 
 ## Outcome
 
@@ -9,7 +9,7 @@ CI and the pre-push guard run the same gate string, character for character, so 
 
 ## Acceptance criteria
 
-- [ ] `.github/workflows/ci.yml`'s Gate step runs exactly `[ci] gate` from `.claude/guard.toml`, and CI is green on it.
+- [x] `.github/workflows/ci.yml`'s Gate step runs exactly `[ci] gate` from `.claude/guard.toml`, and CI is green on it.
 
 ## Scope / non-goals
 
@@ -24,7 +24,7 @@ suppressed, `npm` from `setup-node`, exit status still `npm run check`'s).
 
 ## Tasks
 
-- [ ] Gate step uses the guard's string.
+- [x] Gate step uses the guard's string.
 
 ## Verification
 
@@ -36,3 +36,4 @@ suppressed, `npm` from `setup-node`, exit status still `npm run check`'s).
      A behavior change isn't done until it's reflected here. -->
 
 - 2026-10-15: Sprint created. The 2026-10-15 `ci-standard` estate audit flagged `[ci] gate` as MISMATCH against `ci.yml`'s `npm run check`. Same script, different strings; CI takes the guard's, because the guard's loader is a no-op on a runner (measured on .22 without nvm: `bash -c '. "$HOME/.nvm/nvm.sh" 2>/dev/null; echo ran-on; exit 3'` prints `ran-on`, rc=3).
+- 2026-10-15: PR #9 CI run 38813092041 green; its Gate step ran the guard's exact string. Sprint closed.
