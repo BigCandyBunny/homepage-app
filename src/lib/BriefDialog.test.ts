@@ -104,7 +104,11 @@ describe('Phase 4.8a — About TechStack and CV use the same BriefDialog', () =>
     const dialog = container.querySelector('dialog.brief-dialog') as HTMLDialogElement
     expect(dialog.hasAttribute('open')).toBe(true)
     const img = dialog.querySelector('img') as HTMLImageElement
-    expect(img.src).toContain('/briefs/tech_stack')
+    expect(img.src).toContain('tech_stack')
+    // Imported through Vite (content-hashed in the build), never a fixed public/ path:
+    // public/ is cached for 4 hours, so an in-place swap reached nobody until it expired.
+    // Under Vitest an imported asset resolves to its /src/ path; any public/ file would not.
+    expect(new URL(img.src).pathname.startsWith('/src/')).toBe(true)
   })
 
   it('the TechStack brief shows a TECHSTACK heading and the narrative above the image', async () => {

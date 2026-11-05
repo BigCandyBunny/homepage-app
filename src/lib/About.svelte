@@ -4,6 +4,9 @@
   import cvMarkdown from './cv_onepager.md?raw'
   import techStackMarkdown from './techstack.md?raw'
   import aboutMarkdown from '../../public/llms.txt?raw'
+  // Imported, not a public/ path: Vite content-hashes the URL, so swapping the
+  // file reaches visitors immediately instead of after public/'s 4-hour cache.
+  import techStackSrc from './assets/tech_stack.png'
 
   const cvHtml = renderMarkdown(cvMarkdown)
   // Strip the leading top-level `# heading` (the section already has an <h2>)
@@ -11,7 +14,6 @@
   const aboutHtml = renderMarkdown(
     aboutMarkdown.replace(/^#\s.*\n+/, '').replace(/^## /gm, '### '),
   )
-  const techStackSrc = '/briefs/tech_stack_light.png'
   const techStackIntro = renderMarkdown(`## TechStack\n\n${techStackMarkdown}`)
 </script>
 
