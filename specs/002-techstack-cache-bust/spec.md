@@ -1,6 +1,6 @@
 # Sprint 002 — Techstack Cache Bust
 
-Status: active   Updated: 2026-11-05
+Status: done   Updated: 2026-11-05
 
 ## Outcome
 
@@ -12,7 +12,7 @@ visitor on the next page load instead of after the 4-hour public/ cache.
 - [x] The TechStack image is imported through Vite, not referenced by a fixed `public/` path
 - [x] `npm run build` emits it as `dist/assets/<name>-<hash>.png` and the bundle references that URL
 - [x] A test fails if the TechStack src goes back to an unhashed `/briefs/` path
-- [ ] After deploy, the live bundle references the hashed image and it returns 200
+- [x] After deploy, the live bundle references the hashed image and it returns 200
 
 ## Scope / non-goals
 
@@ -30,7 +30,7 @@ imported assets by content, so a swap changes the URL without anyone remembering
 
 - [x] Red: test asserting the TechStack src is not under `/briefs/`
 - [x] Move the file, switch About.svelte to the import
-- [ ] Gate, adversary review, PR
+- [x] Gate, adversary review, PR
 
 ## Verification
 
@@ -50,3 +50,7 @@ name and fetch it.
   so it 404s after deploy. Red was an assertion (`expected true to be false`), not a missing
   symbol. The test asserts the src is not under `/briefs/`; it cannot see the hash itself, because
   Vitest serves the import unhashed — the build check above is the evidence for that.
+- 2026-11-05: Live after #11: bundle `index-BdBB9fJE.js` references `/assets/tech_stack-22AHIMmS.png`,
+  200, image/png, 5166171 bytes, sha256 513a4672… (matches the source file). Deploy landed ~20 s
+  after the merge was reported.
+- 2026-11-05: Sprint closed.
