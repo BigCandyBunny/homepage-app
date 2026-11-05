@@ -43,7 +43,7 @@ index.html                 # Static <head>: title, meta, CSP, JSON-LD, OG tags
 public/
   llms.txt                 # Plain-markdown summary for LLM crawlers
   robots.txt               # Explicit allow for GPTBot / ClaudeBot / PerplexityBot / …
-  briefs/                  # PNG system overviews + tech stack + CV
+  briefs/                  # PNG system overviews (+ older tech_stack_*/TechStack_CV, unreferenced)
 src/
   main.ts                  # Entry — mounts App.svelte, imports fonts + app.css
   App.svelte               # Editorial shell: nav, <main>, hero, sections
@@ -53,6 +53,8 @@ src/
     ContactForm.svelte     # Underlined editorial fields + "how we work" lead-in
     About.svelte           # Firm description + TechStack and CV buttons
     techstack.md           # Claude Code operating narrative, shown above the TechStack image
+    assets/tech_stack.png  # TechStack image, imported so Vite content-hashes its URL: swap the
+                           # file in place and visitors get it at once (public/ PNGs cache for 4h)
     BriefDialog.svelte     # Native <dialog> lightbox for brief PNGs, with optional intro copy
     briefDialog.svelte.ts  # Shared state + preload helper
     data/projects.ts       # Project data
