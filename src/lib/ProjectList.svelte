@@ -13,6 +13,7 @@
     'Trusted Operational AI': 'trusted_operational_ai_system',
     'Guardrails for Agentic AI': 'guardrails_for_agentic_ai_playbook',
     'Safe Agentic AI for Nordic Enterprise': 'safe_ai_for_nordic_enterprise',
+    'VM Standard': 'vm_standard_system',
   }
 
   let { projects }: Props = $props()

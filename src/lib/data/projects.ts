@@ -15,6 +15,19 @@ export interface Project {
 // Newest first.
 export const projects: Project[] = [
   {
+    title: 'VM Standard',
+    businessImpact: 'Every virtual machine built the same way, from code, every time — and every AI coding session on it held to the same interlocks; drift is prevented structurally, not policed',
+    audience: 'Partners, clients and auditors who must trust how AI-assisted engineering is built and run — security posture you can inspect rather than take on trust',
+    description: 'A privately hosted virtualisation estate run like a process plant: one master recipe, interlocks that cannot be skipped, instruments that are themselves tested. Day 0 provision → Day 1 configure → Day 2 operate, with one Claude Code standard mirrored to every machine.',
+    techStack: {
+      languages: ['OpenTofu (HCL)', 'Ansible (YAML)', 'Python', 'cloud-init'],
+      databases: ['Version-controlled record of every machine — "done" means the code-vs-live comparison reports no differences', 'Membership derived from hypervisor tags, never a hand-kept list'],
+      visualization: ['Assert-only verify playbook — reads every value back weekly, zero changes on a healthy fleet', 'Daily estate watchdog, ~40 checks reported to a phone; a missing report raises its own alarm'],
+      agenticBehaviour: 'Claude Code rules as interlocks, not suggestions: hooks block a source edit until a test fails on an assertion, a commit without a sprint log, a risky push without a finished adversarial review, and any push whose one gate command fails. Unknown means refuse; the hooks are mutation-tested.',
+      clientPreparations: 'A hypervisor with a scoped API token; key-only SSH, default-deny firewall, unattended security updates, workloads in containers. The blueprint is self-contained — a client can take it and run it. We publish the method, never the inventory.',
+    },
+  },
+  {
     title: 'Safe Agentic AI for Nordic Enterprise',
     businessImpact: 'Five working agentic demos on one shared chassis — every action behind a human approve gate, marginal model cost 0.08–0.50 NOK per unit of work',
     audience: 'Nordic SME/enterprise decision makers: plant directors, procurement, compliance, operations',
