@@ -262,6 +262,30 @@ describe('Safe Agentic AI for Nordic Enterprise featured brief', () => {
   })
 })
 
+describe('VM Standard featured brief', () => {
+  const vmStandardProject = {
+    title: 'VM Standard',
+    businessImpact: 'Every machine built the same way, from code, every time',
+    audience: 'Clients and auditors',
+    description: 'One reviewed blueprint for every VM.',
+    techStack: {
+      languages: ['HCL', 'YAML'],
+      databases: ['Version-controlled record'],
+      visualization: ['Weekly verify report'],
+      agenticBehaviour: 'Hooks block the action',
+      clientPreparations: 'A hypervisor and a scoped API token',
+    },
+  }
+
+  it('carries the vm_standard_system PNG path when expanded', async () => {
+    const { container } = render(ProjectList, { props: { projects: [vmStandardProject] } })
+    const row = container.querySelector('tbody tr:first-child') as HTMLElement
+    await fireEvent.click(row)
+    const btn = screen.getByRole('button', { name: /system overview/i }) as HTMLButtonElement
+    expect(btn.dataset.src).toContain('/briefs/vm_standard_system.png')
+  })
+})
+
 describe('Guardrails for Agentic AI featured brief', () => {
   const guardrailsProject = {
     title: 'Guardrails for Agentic AI',
