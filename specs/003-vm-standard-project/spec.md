@@ -1,6 +1,6 @@
 # Sprint 003 — VM Standard project
 
-Status: active   Updated: 2026-11-06
+Status: done   Updated: 2026-11-06
 
 ## Outcome
 
@@ -41,3 +41,6 @@ Sources: `proxmox-vm-standardization/docs/VM-STANDARD.md`, `proxmox-estate/docs/
 - 2026-11-06: Copy keeps to what the three source docs already publish: the method, never the
   inventory. No host counts, addresses or versions in `projects.ts`, because estate-principles.md
   withholds sizes by design.
+- 2026-11-06: Live after #13: `www.justresults.no/briefs/vm_standard_system.png` returns 200,
+  `image/png`, 586939 bytes (matches the committed file); bundle `index-CWSCZwfS.js` carries the
+  `VM Standard` title and the `vm_standard_system` mapping. The apex domain 301s to `www`.
